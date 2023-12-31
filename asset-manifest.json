@@ -1,11 +1,12 @@
 {
   "files": {
     "main.css": "/static/css/main.ee0f75c8.css",
-    "main.js": "/static/js/main.acdc35ce.js",
+    "main.js": "/static/js/main.4da084c0.js",
     "static/media/laxman3.png": "/static/media/laxman3.de6b9c749ed416417592.png",
     "static/media/fa-solid-900.svg": "/static/media/fa-solid-900.33f11e8e33e406b0dc21.svg",
     "static/media/fa-brands-400.svg": "/static/media/fa-brands-400.5f2a2f236048660df440.svg",
     "static/media/laxman2.png": "/static/media/laxman2.2d78f0a47b9b1a8605d7.png",
+    "static/media/CAMSLogo.png": "/static/media/CAMSLogo.4520a95da64cc7135ef2.png",
     "static/media/Montserrat-Regular.ttf": "/static/media/Montserrat-Regular.3cd786652b8a2e9d41f2.ttf",
     "static/media/ino.png": "/static/media/ino.adcd3743af4c9c5e57b5.png",
     "static/media/fa-solid-900.eot": "/static/media/fa-solid-900.d93bcbbb0fbfad39d905.eot",
@@ -14,7 +15,7 @@
     "static/media/laxman1.png": "/static/media/laxman1.a5c438873181a3ed1e72.png",
     "static/media/fa-regular-400.svg": "/static/media/fa-regular-400.c803f540f9bff56c95a4.svg",
     "static/media/AmazonWebservices_Logo.png": "/static/media/AmazonWebservices_Logo.67933d2937bd7e7707e2.png",
-    "static/media/laxman.png": "/static/media/laxman.c066563cd4ebfbbf0768.png",
+    "static/media/laxman4.png": "/static/media/laxman4.c066563cd4ebfbbf0768.png",
     "static/media/fa-brands-400.eot": "/static/media/fa-brands-400.b09f783b99c88d6989f7.eot",
     "static/media/fa-brands-400.ttf": "/static/media/fa-brands-400.ec7723ea62ad74c14959.ttf",
     "static/media/abc.svg": "/static/media/abc.75580442e2586b640bb5.svg",
@@ -49,6 +50,7 @@
     "static/media/startupindialogo_new.png": "/static/media/startupindialogo_new.0d76f4fa5abf833474da.png",
     "static/media/wrighter.jpg": "/static/media/wrighter.0a6efd88c7795e04684b.jpg",
     "static/media/ii.png": "/static/media/ii.bd32d52cee51991414d9.png",
+    "static/media/laxman.png": "/static/media/laxman.efe98f1a0ba461c75361.png",
     "static/media/fa-regular-400.woff": "/static/media/fa-regular-400.2ccf005a6998d30de3d3.woff",
     "static/media/quicko.jpg": "/static/media/quicko.ab474dcf4aa1473d7218.jpg",
     "static/media/Udemy-Emblem.png": "/static/media/Udemy-Emblem.9cda974df3fe03bf2b42.png",
@@ -57,10 +59,10 @@
     "static/media/buld.jpg": "/static/media/buld.55444b9789a64f32e2e5.jpg",
     "index.html": "/index.html",
     "main.ee0f75c8.css.map": "/static/css/main.ee0f75c8.css.map",
-    "main.acdc35ce.js.map": "/static/js/main.acdc35ce.js.map"
+    "main.4da084c0.js.map": "/static/js/main.4da084c0.js.map"
   },
   "entrypoints": [
     "static/css/main.ee0f75c8.css",
-    "static/js/main.acdc35ce.js"
+    "static/js/main.4da084c0.js"
   ]
 }
