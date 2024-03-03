@@ -13,7 +13,7 @@ If this doesn't work Just change the location of the file download and repeat pr
 
 # How to Deploy
 
-I have used Netlify to host my portfolio. If you want to use GitHub Pages, just run `npm run build` and publish all the files in the `/build` folder to your repository.
+If you want to use GitHub Pages, just run `npm run build` and publish all the files in the `/build` folder to your repository.
 
 # References
 
