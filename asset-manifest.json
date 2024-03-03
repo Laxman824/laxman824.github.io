@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.2b053060.css",
-    "main.js": "/static/js/main.ecb94713.js",
+    "main.css": "/static/css/main.6505e1db.css",
+    "main.js": "/static/js/main.468d5b58.js",
     "static/media/laxman3.png": "/static/media/laxman3.de6b9c749ed416417592.png",
     "static/media/fa-solid-900.svg": "/static/media/fa-solid-900.33f11e8e33e406b0dc21.svg",
     "static/media/fa-brands-400.svg": "/static/media/fa-brands-400.5f2a2f236048660df440.svg",
     "static/media/laxman2.png": "/static/media/laxman2.2d78f0a47b9b1a8605d7.png",
     "static/media/Montserrat-Regular.ttf": "/static/media/Montserrat-Regular.3cd786652b8a2e9d41f2.ttf",
     "static/media/ino.png": "/static/media/ino.adcd3743af4c9c5e57b5.png",
+    "static/media/laxman.png": "/static/media/laxman.18aadb0b92d45da58368.png",
     "static/media/fa-solid-900.eot": "/static/media/fa-solid-900.d93bcbbb0fbfad39d905.eot",
     "static/media/fa-solid-900.ttf": "/static/media/fa-solid-900.aae41ea25bd0dde9f796.ttf",
     "static/media/NS-1.png": "/static/media/NS-1.aec742ca13a4b758ba39.png",
-    "static/media/laxman.png": "/static/media/laxman.3031fb20771404ed46fa.png",
+    "static/media/laxman4.png": "/static/media/laxman4.3031fb20771404ed46fa.png",
     "static/media/laxman1.png": "/static/media/laxman1.a5c438873181a3ed1e72.png",
     "static/media/fa-regular-400.svg": "/static/media/fa-regular-400.c803f540f9bff56c95a4.svg",
     "static/media/AmazonWebservices_Logo.png": "/static/media/AmazonWebservices_Logo.67933d2937bd7e7707e2.png",
@@ -60,11 +61,11 @@
     "static/media/fa-regular-400.woff2": "/static/media/fa-regular-400.e5917ad1531005ea8c3f.woff2",
     "static/media/buld.jpg": "/static/media/buld.55444b9789a64f32e2e5.jpg",
     "index.html": "/index.html",
-    "main.2b053060.css.map": "/static/css/main.2b053060.css.map",
-    "main.ecb94713.js.map": "/static/js/main.ecb94713.js.map"
+    "main.6505e1db.css.map": "/static/css/main.6505e1db.css.map",
+    "main.468d5b58.js.map": "/static/js/main.468d5b58.js.map"
   },
   "entrypoints": [
-    "static/css/main.2b053060.css",
-    "static/js/main.ecb94713.js"
+    "static/css/main.6505e1db.css",
+    "static/js/main.468d5b58.js"
   ]
 }
