@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.f76c0982.css",
-    "main.js": "/static/js/main.e71137e8.js",
+    "main.css": "/static/css/main.a5d759b6.css",
+    "main.js": "/static/js/main.e844d9ed.js",
     "static/media/laxman3.png": "/static/media/laxman3.de6b9c749ed416417592.png",
     "static/media/fa-solid-900.svg": "/static/media/fa-solid-900.33f11e8e33e406b0dc21.svg",
     "static/media/fa-brands-400.svg": "/static/media/fa-brands-400.5f2a2f236048660df440.svg",
@@ -67,11 +67,11 @@
     "static/media/fa-regular-400.woff2": "/static/media/fa-regular-400.e5917ad1531005ea8c3f.woff2",
     "static/media/buld.jpg": "/static/media/buld.55444b9789a64f32e2e5.jpg",
     "index.html": "/index.html",
-    "main.f76c0982.css.map": "/static/css/main.f76c0982.css.map",
-    "main.e71137e8.js.map": "/static/js/main.e71137e8.js.map"
+    "main.a5d759b6.css.map": "/static/css/main.a5d759b6.css.map",
+    "main.e844d9ed.js.map": "/static/js/main.e844d9ed.js.map"
   },
   "entrypoints": [
-    "static/css/main.f76c0982.css",
-    "static/js/main.e71137e8.js"
+    "static/css/main.a5d759b6.css",
+    "static/js/main.e844d9ed.js"
   ]
 }
