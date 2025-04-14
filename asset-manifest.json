@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.d0313bcb.css",
-    "main.js": "/static/js/main.d90559eb.js",
+    "main.css": "/static/css/main.cc0be3f2.css",
+    "main.js": "/static/js/main.3d0af6ac.js",
     "static/media/laxman3.png": "/static/media/laxman3.de6b9c749ed416417592.png",
     "static/media/fa-solid-900.svg": "/static/media/fa-solid-900.33f11e8e33e406b0dc21.svg",
     "static/media/coursera.jpg": "/static/media/coursera.aca298843604bd8ceb96.jpg",
@@ -80,11 +80,11 @@
     "static/media/fa-regular-400.woff2": "/static/media/fa-regular-400.e5917ad1531005ea8c3f.woff2",
     "static/media/buld.jpg": "/static/media/buld.55444b9789a64f32e2e5.jpg",
     "index.html": "/index.html",
-    "main.d0313bcb.css.map": "/static/css/main.d0313bcb.css.map",
-    "main.d90559eb.js.map": "/static/js/main.d90559eb.js.map"
+    "main.cc0be3f2.css.map": "/static/css/main.cc0be3f2.css.map",
+    "main.3d0af6ac.js.map": "/static/js/main.3d0af6ac.js.map"
   },
   "entrypoints": [
-    "static/css/main.d0313bcb.css",
-    "static/js/main.d90559eb.js"
+    "static/css/main.cc0be3f2.css",
+    "static/js/main.3d0af6ac.js"
   ]
 }
