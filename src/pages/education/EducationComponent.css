@@ -1,0 +1,323 @@
+.education-main {
+  width: 100%;
+}
+
+.basic-education {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.heading-div {
+  display: flex;
+}
+
+.heading-div > * {
+  flex: 1;
+}
+
+.heading-img-div {
+  align-items: center;
+  justify-content: center;
+}
+
+.heading-text-div {
+  text-align: center;
+  color: orange;
+}
+
+.heading-img-div > * {
+  max-width: 80%;
+  height: auto;
+}
+
+.heading-text {
+  font-size: 56px;
+  font-weight: 400;
+  font-family: "Google Sans Medium";
+  line-height: 1.1;
+  text-align: center;
+  margin-top: 100px;
+  color: orange;
+}
+
+.heading-sub-text {
+  font-size: 30px;
+  font-family: "Google Sans Regular";
+  text-align: center;
+  color: orange;
+}
+
+.heading-sub-text-new {
+  font-size: 30px;
+  font-family: "Google Sans Regular";
+  text-align: center;
+  color: orange;
+}
+
+.organizations-img {
+  width: 300px;
+  height: 300px;
+}
+
+.organizations-imgnew {
+  width: 250px;
+  height: auto;
+}
+
+.organizations-imgnewnew {
+  width: 50px;
+  height: auto;
+}
+
+.organizations-inline {
+  display: inline-block;
+  margin-right: 50px;
+  margin-bottom: 50px;
+  font-family: "Google Sans Regular";
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth animation */
+}
+
+.organizations-inline:hover {
+  transform: translate(0px, -5px);
+  box-shadow: 0 0 20px rgba(212, 226, 13, 0.6); /* Add glow effect on hover */
+}
+
+.button {
+  background-color: rgb(204, 153, 58);
+  text-decoration: none;
+  color: rgb(31, 29, 25);
+  padding: 15px 15px;
+  margin-top: 25px;
+  border-radius: 4px;
+  border-width: 0px;
+  margin-bottom: 20px;
+  width: 230px;
+  height: 50px;
+  font-weight: bold;
+  font-family: "Google Sans Regular";
+  font-size: 17px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+@media (max-width: 1380px) {
+  .heading-text {
+    font-size: 50px;
+    margin-top: 80px;
+  }
+  .heading-sub-text {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heading-text {
+    font-size: 30px;
+    margin-top: 20px;
+  }
+
+  .heading-sub-text {
+    font-size: 20px;
+  }
+
+  .heading-div {
+    flex-direction: column;
+  }
+}
+
+.containerCer {
+  display: flex;
+  box-shadow: 0 0 10px rgba(212, 226, 13, 0.6);
+
+  padding: 20px;
+}
+
+.box {
+  flex: 1;
+  padding: 20px;
+  margin: 60px;
+  border: 1px solid rgb(218, 135, 10);
+  border-radius: 25px;
+  position: relative;
+  margin-bottom: 30px;
+  background-size: cover;
+  color: rgb(22, 21, 21);
+}
+
+.box img {
+  max-width: 50%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.text {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.ribbon1 {
+  position: absolute;
+  top: -6.1px;
+  right: 10px;
+}
+.ribbon1:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 53px solid transparent;
+  border-right: 47px solid transparent;
+  border-top: 22px solid #f8463f;
+}
+.ribbon1 span {
+  position: relative;
+  display: block;
+  text-align: center;
+  background: #f8463f;
+  font-size: 14px;
+  line-height: 1;
+  padding: 12px 8px 10px;
+  border-top-right-radius: 8px;
+  width: 90px;
+}
+.ribbon1 span:before,
+.ribbon1 span:after {
+  position: absolute;
+  content: "";
+}
+.ribbon1 span:before {
+  height: 6px;
+  width: 6px;
+  left: -6px;
+  top: 0;
+  background: #f8463f;
+}
+.ribbon1 span:after {
+  height: 6px;
+  width: 8px;
+  left: -8px;
+  top: 0;
+  border-radius: 8px 8px 0 0;
+  background: #605959;
+}
+
+@media (min-width: 500px) {
+  .ribbons-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .ribbon {
+    width: 48%;
+  }
+}
+
+.heading-sub-text-new h1 {
+  font-size: 36px;
+  font-family: "Montserrat", sans-serif; /* Change the font family */
+  text-align: center;
+  color: #ffffff; /* Change the text color to white */
+  width: 70%; /* Increase the width */
+  position: relative;
+  background: #ff7f50; /* Change the background color to a warmer orange */
+  padding: 15px 30px; /* Increase the padding */
+  margin: 30px auto 50px; /* Adjust the margin */
+  border-radius: 10px; /* Apply a border radius to all corners */
+  letter-spacing: 2px; /* Increase the letter spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+.heading-sub-text-new h1:before,
+.heading-sub-text-new h1:after {
+  content: "";
+  position: absolute;
+  top: -8px; /* Adjust the top position */
+  border: 20px solid #d66a3a; /* Change the border color to a darker orange */
+}
+
+.heading-sub-text-new h1:before {
+  left: -40px; /* Adjust the left position */
+  border-right-width: 20px;
+  border-left-color: transparent;
+}
+
+.heading-sub-text-new h1:after {
+  right: -40px; /* Adjust the right position */
+  border-left-width: 20px;
+  border-right-color: transparent;
+}
+
+.heading-sub-text-new h1 span:before,
+.heading-sub-text-new h1 span:after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-color: #c25b29 transparent transparent transparent; /* Change the border color to a darker orange */
+  top: -8px; /* Adjust the top position */
+  transform: rotate(180deg);
+}
+
+.heading-sub-text-new h1 span:before {
+  left: 0;
+  border-width: 8px 0 0 8px; /* Adjust the border width */
+}
+
+.heading-sub-text-new h1 span:after {
+  right: 0;
+  border-width: 8px 8px 0 0; /* Adjust the border width */
+}
+
+.ribbon3 {
+  width: 120px;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 15px;
+  position: absolute;
+  left: -8px;
+  top: 20px;
+  background: #59324c;
+}
+.ribbon3:before,
+.ribbon3:after {
+  content: "";
+  position: absolute;
+}
+.ribbon3:before {
+  height: 0;
+  width: 0;
+  top: -8.5px;
+  left: 0.1px;
+  border-bottom: 9px solid #411d35;
+  border-left: 9px solid transparent;
+}
+.ribbon3:after {
+  height: 0;
+  width: 0;
+  right: -14px;
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  border-left: 15px solid #59324c;
+}
+
+.cap-emoji {
+  display: inline-block;
+  position: relative;
+  animation: capToss 1.5s infinite ease-in-out;
+  transform-origin: bottom center;
+  font-size: 1.2em;
+}
+
+@keyframes capToss {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Remove all the sparkle and celebration effects */

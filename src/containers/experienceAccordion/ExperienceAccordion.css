@@ -1,0 +1,155 @@
+.experience-accord {
+  margin: 3rem auto;
+  max-width: 1200px;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.accord-panel {
+  margin-bottom: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(211, 211, 211, 0.2);
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.accord-panel:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.accord-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  z-index: -1;
+}
+
+.accord-panel-header {
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(211, 211, 211, 0.1);
+}
+
+.accord-panel-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(to bottom, #2962ff, #82b1ff);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.4s ease;
+}
+
+.accord-panel-header:hover::before {
+  transform: scaleY(1);
+}
+
+.accord-panel-header h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.accord-panel-header:hover h3 {
+  transform: translateX(10px);
+  color: #2962ff;
+}
+
+.accord-panel-header span {
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(41, 98, 255, 0.1);
+}
+
+.accord-panel-header:hover span {
+  transform: rotate(180deg);
+  background: rgba(41, 98, 255, 0.2);
+}
+
+.accord-panel-content {
+  padding: 2rem;
+  display: grid;
+  gap: 2rem;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slideDown 0.5s ease forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dark mode adjustments */
+.dark-mode .accord-panel {
+  background: rgba(29, 29, 29, 0.8);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .accord-panel-header::before {
+  background: linear-gradient(to bottom, #82b1ff, #2962ff);
+}
+
+.dark-mode .accord-panel-header:hover h3 {
+  color: #82b1ff;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .experience-accord {
+    margin: 2rem auto;
+    padding: 0 1rem;
+    gap: 1.5rem;
+  }
+
+  .accord-panel-header {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .accord-panel-header h3 {
+    font-size: 1.3rem;
+  }
+
+  .accord-panel-content {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+}

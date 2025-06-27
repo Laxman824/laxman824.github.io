@@ -1,0 +1,287 @@
+.experience-card {
+  width: 100%;
+  margin-bottom: 0;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(211, 211, 211, 0.1);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.experience-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-color: rgba(41, 98, 255, 0.3);
+}
+
+.experience-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(41, 98, 255, 0.05),
+    rgba(130, 177, 255, 0.05)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.experience-card:hover::before {
+  opacity: 1;
+}
+
+.experience-card-logo-div {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-right: 1px solid rgba(211, 211, 211, 0.1);
+  min-width: 120px;
+}
+
+.experience-card-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  filter: grayscale(30%);
+}
+
+.experience-card:hover .experience-card-logo {
+  transform: scale(1.1);
+  filter: grayscale(0%);
+}
+
+.experience-card-body-div {
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.experience-card-header-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  align-items: flex-start;
+}
+
+.experience-card-title {
+  font-family: "Google Sans Medium";
+  font-size: 1.4rem;
+  margin: 0 0 0.5rem 0;
+  transition: color 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.experience-card-title::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(to right, #2962ff, #82b1ff);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.experience-card:hover .experience-card-title::after {
+  transform: scaleX(1);
+}
+
+.experience-card:hover .experience-card-title {
+  color: #2962ff;
+}
+
+.experience-card-company {
+  font-family: "Google Sans Regular";
+  font-size: 1.1rem;
+  margin: 0;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.experience-card-company > a {
+  position: relative;
+  color: #8c8c8c;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.experience-card-company > a:hover {
+  color: #2962ff;
+}
+
+.experience-card-company > a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #2962ff;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.experience-card-company > a:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.experience-card-duration {
+  font-family: "Google Sans Regular";
+  font-size: 1rem;
+  margin: 0 0 0.5rem 0;
+  color: #8c8c8c;
+  display: flex;
+  align-items: center;
+}
+
+.experience-card-duration::before {
+  content: "⏱";
+  margin-right: 5px;
+  font-size: 0.9em;
+}
+
+.experience-card-location {
+  font-family: "Google Sans Regular";
+  font-size: 1rem;
+  margin: 0;
+  color: #868e96;
+  display: flex;
+  align-items: center;
+}
+
+.experience-card-location::before {
+  content: "📍";
+  margin-right: 5px;
+  font-size: 0.9em;
+}
+
+.experience-card-description {
+  font-family: "Google Sans Regular";
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 1rem 0 0 0;
+  color: rgba(0, 0, 0, 0.7);
+  position: relative;
+  padding-left: 15px;
+}
+
+.experience-card-description::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2962ff;
+  opacity: 0.7;
+}
+
+/* Dark mode adjustments */
+.dark-mode .experience-card {
+  background: rgba(29, 29, 29, 0.8);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .experience-card-title::after {
+  background: linear-gradient(to right, #82b1ff, #2962ff);
+}
+
+.dark-mode .experience-card-description {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.dark-mode .experience-card-description::before {
+  background: #82b1ff;
+}
+
+@media (max-width: 768px) {
+  .experience-card {
+    margin-bottom: 15px;
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .experience-card-logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 15px;
+  }
+
+  .experience-card-body-div {
+    width: 100%;
+    padding: 0;
+  }
+
+  .experience-card-heading-left {
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .experience-card-heading-right {
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .experience-card-title {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+
+  .experience-card-company {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .experience-card-duration {
+    margin-top: 5px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .experience-card-location {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .experience-card-header-div {
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+
+  .experience-card-description {
+    margin: 10px 0;
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}

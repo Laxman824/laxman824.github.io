@@ -1,0 +1,198 @@
+.projects-main {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 100px; /* Add fixed padding for header */
+  margin: 0;
+}
+
+.basic-projects {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  padding: 20px 10px;
+}
+
+.projects-heading-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.projects-heading-div > * {
+  flex: 1;
+}
+
+.projects-heading-img-div {
+  align-items: center;
+  justify-content: center;
+}
+
+.projects-heading-text-div {
+  text-align: center;
+}
+
+.projects-heading-img-div > * {
+  max-width: 100%;
+  height: auto;
+}
+
+.projects-heading-text {
+  font-size: 56px;
+  font-weight: 400;
+  font-family: "Google Sans Medium";
+  line-height: 1.1;
+  text-align: center;
+  margin-top: 80px;
+  color: orange;
+}
+
+/* Rocket animation */
+.rocket-emoji {
+  display: inline-block;
+  animation: rocketFlight 3s infinite;
+  transform-origin: center;
+}
+
+@keyframes rocketFlight {
+  0% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  45% {
+    transform: translateX(150px) translateY(-50px) rotate(45deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateX(200px) translateY(-70px) rotate(45deg);
+    opacity: 0;
+  }
+  55% {
+    transform: translateX(-200px) translateY(-70px) rotate(45deg);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(-150px) translateY(-50px) rotate(45deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.projects-heading-sub-text {
+  font-size: 30px;
+  font-family: "Google Sans Regular";
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.projects-header-detail-text {
+  font-size: 20px;
+  line-height: 30px;
+  margin-top: 0px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-family: "Google Sans Medium";
+}
+
+.repo-cards-div-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1rem 1rem;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 60px;
+}
+
+@media (max-width: 1380px) {
+  .projects-heading-text {
+    font-size: 50px;
+    margin-top: 80px;
+  }
+  .projects-heading-sub-text {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-heading-text {
+    font-size: 30px;
+    margin-top: 20px;
+  }
+
+  .projects-heading-sub-text {
+    font-size: 20px;
+  }
+
+  .projects-heading-div {
+    flex-direction: column;
+  }
+
+  .projects-header-detail-text {
+    font-size: 16px;
+    margin-right: 0px;
+    margin-left: 0px;
+    line-height: normal;
+    text-align: center;
+  }
+}
+
+.repo-cards-div-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1rem 1rem;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 60px;
+}
+
+.repo-cards-div-main .ProjectCard {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+}
+
+/* Light Theme */
+.light-theme .repo-cards-div-main .ProjectCard:hover {
+  transform: translateY(-10px) scale(1.05) rotateX(20deg);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+  background-color: #f5f5f5; /* Light gray background color */
+}
+
+/* Dark Theme */
+.dark-theme .repo-cards-div-main .ProjectCard:hover {
+  transform: translateY(-10px) scale(1.05) rotateX(20deg);
+  box-shadow: 0 20px 30px rgba(255, 255, 255, 0.3);
+  background-color: #333; /* Dark gray background color */
+}
+
+@media (max-width: 768px) {
+  .repo-cards-div-main {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 30px;
+  }
+
+  /* Light Theme */
+  .light-theme .repo-cards-div-main .ProjectCard:hover {
+    transform: translateY(-10px) scale(1.05) rotateX(20deg);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+    background-color: #f5f5f5; /* Light gray background color */
+  }
+
+  /* Dark Theme */
+  .dark-theme .repo-cards-div-main .ProjectCard:hover {
+    transform: translateY(-10px) scale(1.05) rotateX(20deg);
+    box-shadow: 0 20px 30px rgba(255, 255, 255, 0.3);
+    background-color: #333; /* Dark gray background color */
+  }
+}
+
+/* Center the More Projects button */
+.projects-main .general-btn {
+  display: block;
+  margin: 0 auto;
+  max-width: 250px;
+}

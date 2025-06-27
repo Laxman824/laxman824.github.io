@@ -1,0 +1,24 @@
+.border-beam {
+  position: relative;
+  overflow: hidden;
+}
+
+.border-beam::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, #fff, transparent);
+  animation: borderBeam 4s linear infinite;
+}
+
+@keyframes borderBeam {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}

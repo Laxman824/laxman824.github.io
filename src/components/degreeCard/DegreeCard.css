@@ -1,0 +1,199 @@
+.degree-card {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+  overflow: hidden;
+  will-change: transform;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+
+/* 3D Corner Accents */
+.degree-card::before,
+.degree-card::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  transition: all 0.5s ease;
+}
+
+.degree-card::before {
+  top: 0;
+  left: 0;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  border-left: 2px solid rgba(255, 255, 255, 0.1);
+  transform: translate3d(0, 0, 20px);
+}
+
+.degree-card::after {
+  bottom: 0;
+  right: 0;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  border-right: 2px solid rgba(255, 255, 255, 0.1);
+  transform: translate3d(0, 0, 20px);
+}
+
+/* 3D Floating Elements */
+.floating-element {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+  animation: float 15s infinite;
+  opacity: 0.5;
+}
+
+.floating-element:nth-child(1) {
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.floating-element:nth-child(2) {
+  top: 50%;
+  right: 15%;
+  animation-delay: -5s;
+}
+
+.floating-element:nth-child(3) {
+  bottom: 20%;
+  left: 30%;
+  animation-delay: -10s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(15px, -15px);
+  }
+  50% {
+    transform: translate(-10px, 20px);
+  }
+  75% {
+    transform: translate(-20px, -10px);
+  }
+}
+
+.body-header {
+  max-width: inherit;
+  display: flex;
+  border-radius: 7px 7px 0px 0px;
+  padding: 10px;
+  transform: translate3d(0, 0, 30px);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.02)
+  );
+  backdrop-filter: blur(3px);
+  transition: all 0.5s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.body-header-title {
+  align-items: flex-start;
+  width: 80%;
+}
+
+.body-header-duration {
+  width: 20%;
+}
+.duration {
+  font-family: "Google Sans Regular";
+  font-size: 16px;
+  padding-right: 10px;
+  float: right;
+}
+
+.body-content {
+  max-width: inherit;
+  border-radius: 0px 0px 7px 7px;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  transform: translate3d(0, 0, 20px);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(3px);
+  transition: all 0.5s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.content-list {
+  margin: 5px;
+  padding-left: 20px;
+  padding-right: 10px;
+  font-family: "Google Sans Regular";
+}
+
+/* Enhanced image container */
+.degree-card [class*="css-"] {
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+}
+
+.degree-card:hover [class*="css-"] {
+  transform: translate3d(0, 0, 40px);
+}
+
+@media (max-width: 768px) {
+  .degree-card {
+    flex-direction: column;
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .floating-element {
+    display: none;
+  }
+
+  .body-header {
+    flex-direction: column;
+  }
+
+  .body-header-title {
+    width: 100%;
+  }
+
+  .body-header-duration {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .duration {
+    padding: 0px;
+    margin: 0px;
+    float: left;
+  }
+
+  .card-title {
+    font-size: 20px;
+  }
+
+  .card-subtitle {
+    font-size: 16px;
+  }
+}

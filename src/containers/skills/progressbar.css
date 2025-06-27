@@ -1,0 +1,79 @@
+.Progressbardiv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Google Sans Regular";
+}
+
+.progress-innerdiv {
+  width: 42%;
+  margin: 2rem;
+  transition: 0.2s ease-in-out;
+}
+
+.progress-innerdiv:hover {
+  transform: scale(1.2);
+}
+
+.progress {
+  background-color: rgba(16, 190, 221, 0.4);
+  border-radius: 60px;
+  position: relative;
+  margin: 15px 0;
+  height: 40px;
+}
+
+.progress-header-bar {
+  display: flex;
+  justify-items: flex-start;
+  align-items: center;
+  font-size: 28px;
+}
+
+.progress-header-bar h4 {
+  margin: 0;
+}
+
+.progress-header-bar svg {
+  height: 32px;
+  width: 32px;
+  margin-right: 1rem;
+}
+
+.progress-done {
+  border-radius: 60px;
+  color: #d64a4a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 0; /* Initial width before animation */
+  opacity: 0;
+  transition: width 1s ease-out, opacity 0.5s ease-in-out;
+}
+
+/* New animation styles */
+.progress-done {
+  animation: fill-progress 1s ease-out forwards;
+}
+
+@keyframes fill-progress {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 100%; /* Animate to full width (adjust based on your desired progress) */
+    opacity: 1;
+  }
+}
+
+/* Media queries remain the same */
+@media (max-width: 1000px) {
+  /* ... */
+}
+
+@media (max-width: 768px) {
+  /* ... */
+}
