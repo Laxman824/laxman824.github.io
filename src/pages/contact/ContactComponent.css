@@ -818,3 +818,13 @@
     min-width: unset;
   }
 }
+/* GitHub icon base style */
+.github-icon {
+  font-size: 22px;
+  transition: transform 0.3s ease;
+}
+
+/* GitHub icon hover animation - ROTATION */
+.github-btn:hover .github-icon {
+  transform: rotate(360deg) scale(1.2);
+}

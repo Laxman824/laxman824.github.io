@@ -1,69 +1,170 @@
-.repo-stats {
+/* ============================================
+   🎨 PROMINENT HOVER ANIMATIONS
+   More Visible, Impactful, Engaging
+   ============================================ */
+
+.project-card {
   display: flex;
-  -webkit-box-pack: justify;
+  flex-direction: column;
+  position: relative;
+
+  /* Glassmorphism */
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  padding: 2rem;
+  border-radius: 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
   justify-content: space-between;
-  font-size: 13px;
-  color: rgb(106, 115, 125);
+  overflow: hidden;
+  cursor: pointer;
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  height: 300px;
+  width: 100%;
 }
 
-.repo-left-stat {
-  -webkit-box-flex: 1;
-  flex-grow: 1;
-  display: flex;
+/* Dark mode */
+.dark-mode .project-card {
+  background: rgba(23, 28, 40, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-.language-color {
-  width: 10px;
-  height: 10px;
-  background-color: blue;
-  margin-right: 0.25rem;
-  border-radius: 100%;
+/* ============================================
+     🎨 PROMINENT SPOTLIGHT EFFECT
+     ============================================ */
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle 250px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(99, 102, 241, 0.15) 0%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
 }
 
-.repo-left-stat span {
-  display: flex;
-  -webkit-box-align: center;
-  align-items: center;
-  margin-right: 0.75rem;
+.project-card:hover::before {
+  opacity: 1;
 }
 
+/* ============================================
+     🎨 PROMINENT HOVER - NOTICEABLE LIFT
+     ============================================ */
+.project-card:hover {
+  transform: translateY(99px) scale(1.02);
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(99, 102, 241, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.dark-mode .project-card:hover {
+  background: rgba(23, 28, 40, 0.9);
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(99, 102, 241, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================
+     🎨 PROMINENT REPO NAME ANIMATIONS
+     ============================================ */
 .repo-name-div {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 0.5rem;
   min-height: 40px;
+  position: relative;
+  z-index: 2;
 }
 
 .repo-svg {
   margin-right: 0.5rem;
   min-width: 16px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-origin: center;
+}
+
+.project-card:hover .repo-svg {
+  transform: scale(1.3) rotate(15deg);
+  filter: drop-shadow(0 6px 12px rgba(99, 102, 241, 0.5));
 }
 
 .repo-name {
   white-space: nowrap;
-  line-height: 1.1;
+  line-height: 1.2;
   text-overflow: ellipsis;
   color: rgb(36, 41, 46);
-  font-family: "Google Sans Regular";
+  font-family: "Google Sans Regular", sans-serif;
   font-size: 22px;
   font-weight: 700;
   letter-spacing: -0.5px;
   overflow: hidden;
-  margin: 0px;
-  transition: color 0.3s ease;
+  margin: 0;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   max-width: 80%;
+  position: relative;
 }
 
-.repo-star-svg {
-  margin-right: 0.3rem;
+.dark-mode .repo-name {
+  color: rgb(249, 250, 251);
 }
 
+.project-card:hover .repo-name {
+  color: #6366f1;
+  transform: translateX(4px) translateY(-2px);
+  text-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+/* Prominent underline animation */
+.repo-name::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #6366f1, #818cf8, #6366f1);
+  background-size: 200% 100%;
+  transition: width 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 2px;
+}
+
+.project-card:hover .repo-name::after {
+  width: 100%;
+  animation: gradientMove 3s ease-in-out infinite;
+}
+
+@keyframes gradientMove {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* ============================================
+     🎨 PROMINENT DESCRIPTION ANIMATIONS
+     ============================================ */
 .repo-description {
   word-wrap: break-word;
   text-align: left;
   display: -webkit-box;
-  font-family: "Google Sans Regular";
+  font-family: "Google Sans Regular", sans-serif;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   font-size: 16px;
@@ -74,51 +175,319 @@
   flex-grow: 1;
   min-height: 72px;
   max-height: 72px;
+  color: #6b7280;
+  position: relative;
+  z-index: 2;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+.dark-mode .repo-description {
+  color: #9ca3af;
+}
+
+.project-card:hover .repo-description {
+  color: #4b5563;
+  transform: translateY(-3px) scale(1.02);
+}
+
+.dark-mode .project-card:hover .repo-description {
+  color: #f9fafb;
+}
+
+/* ============================================
+     🎨 PROMINENT DETAILS SECTION
+     ============================================ */
 .repo-details {
   margin-top: auto;
   padding-top: 1rem;
-  border-top: 1px solid rgba(211, 211, 211, 0.397);
+  border-top: 1px solid rgba(211, 211, 211, 0.2);
+  position: relative;
+  z-index: 2;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.project-card:hover .repo-details {
+  border-top-color: rgba(99, 102, 241, 0.5);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+     🎨 PROMINENT STATS ANIMATIONS
+     ============================================ */
+.repo-stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: rgb(106, 115, 125);
+  font-family: "Google Sans Regular", sans-serif;
+}
+
+.dark-mode .repo-stats {
+  color: #9ca3af;
+}
+
+.repo-left-stat {
+  flex-grow: 1;
+  display: flex;
+}
+
+.repo-left-stat span {
+  display: flex;
+  align-items: center;
+  margin-right: 0.75rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.project-card:hover .repo-left-stat span {
+  color: #6366f1;
+  transform: translateX(3px) translateY(-1px);
+}
+
+.language-color {
+  width: 10px;
+  height: 10px;
+  background-color: #6366f1;
+  margin-right: 0.25rem;
+  border-radius: 50%;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 2px 6px rgba(99, 102, 241, 0.3);
+}
+
+.project-card:hover .language-color {
+  transform: scale(1.5);
+  box-shadow: 0 0 16px rgba(99, 102, 241, 0.8);
+  animation: colorPulse 2s ease-in-out infinite;
+}
+
+@keyframes colorPulse {
+  0%,
+  100% {
+    transform: scale(1.5);
+    box-shadow: 0 0 16px rgba(99, 102, 241, 0.8);
+  }
+  50% {
+    transform: scale(1.8);
+    box-shadow: 0 0 24px rgba(99, 102, 241, 1);
+  }
+}
+
+.repo-star-svg {
+  margin-right: 0.3rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-origin: center;
+}
+
+.project-card:hover .repo-star-svg {
+  transform: scale(1.4) rotate(25deg);
+  filter: drop-shadow(0 6px 12px rgba(245, 158, 11, 0.6));
 }
 
 .repo-creation-date {
   margin: 0;
-  font-family: "Google Sans Regular";
+  font-family: "Google Sans Regular", sans-serif;
   font-weight: 400;
   margin-left: 0px;
   margin-right: auto;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+.project-card:hover .repo-creation-date {
+  transform: translateX(2px);
+}
+
+/* ============================================
+     🎨 PROMINENT LANGUAGE ICONS ANIMATIONS
+     ============================================ */
+.dev-icons-languages {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.software-skill-inline-languages {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0.85;
+  transform-origin: center bottom;
+}
+
+.project-card:hover .software-skill-inline-languages {
+  transform: scale(1.2) translateY(-6px);
+  opacity: 1;
+  filter: drop-shadow(0 8px 16px rgba(99, 102, 241, 0.5));
+}
+
+/* Prominent float animation on hover */
+.project-card:hover .software-skill-inline-languages:nth-child(1) {
+  animation: prominentFloat 2.5s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.project-card:hover .software-skill-inline-languages:nth-child(2) {
+  animation: prominentFloat 2.5s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+
+.project-card:hover .software-skill-inline-languages:nth-child(3) {
+  animation: prominentFloat 2.5s ease-in-out infinite;
+  animation-delay: 0.6s;
+}
+
+.project-card:hover .software-skill-inline-languages:nth-child(4) {
+  animation: prominentFloat 2.5s ease-in-out infinite;
+  animation-delay: 0.9s;
+}
+
+@keyframes prominentFloat {
+  0%,
+  100% {
+    transform: scale(1.2) translateY(-6px) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.25) translateY(-10px) rotate(5deg);
+  }
+  50% {
+    transform: scale(1.2) translateY(-6px) rotate(0deg);
+  }
+  75% {
+    transform: scale(1.25) translateY(-10px) rotate(-5deg);
+  }
+}
+
+/* ============================================
+     🎨 PROMINENT LIVE BUTTON
+     ============================================ */
 .live-button {
-  padding: 4px 10px;
-  border-radius: 12px;
-  border: none;
+  padding: 6px 14px;
+  border-radius: 10px;
+  border: 2px solid rgba(99, 102, 241, 0.4);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 600;
+  font-family: "Google Sans Medium", sans-serif;
   cursor: pointer;
-  transition: all 0.3s ease;
+
+  background: rgba(99, 102, 241, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  color: #6366f1;
+
   display: flex;
   align-items: center;
   gap: 4px;
   margin-left: 10px;
   min-width: 50px;
   justify-content: center;
+
+  position: relative;
+  overflow: hidden;
+
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+}
+
+.dark-mode .live-button {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: rgba(99, 102, 241, 0.5);
+  color: #818cf8;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+/* Prominent ripple effect */
+.live-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.4) 0%,
+    transparent 70%
+  );
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+  border-radius: 50%;
 }
 
 .live-button:hover {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  background: rgba(99, 102, 241, 0.25);
+  border-color: rgba(99, 102, 241, 0.6);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.dark-mode .live-button:hover {
+  background: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.live-button:hover::before {
+  width: 200px;
+  height: 200px;
 }
 
 .live-button:active {
-  transform: translateY(0) scale(0.95);
+  transform: translateY(-2px) scale(1.02);
+  transition-duration: 0.1s;
 }
 
+/* ============================================
+     🎨 ENTRANCE ANIMATIONS
+     ============================================ */
+.project-card {
+  animation: cardEntrance 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+}
+
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+    filter: blur(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* Staggered entrance */
+.project-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.project-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.project-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.project-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.project-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.project-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* ============================================
+     🎨 RESPONSIVE DESIGN
+     ============================================ */
 @media (max-width: 768px) {
   .project-card {
     height: 280px;
     padding: 1.5rem;
+  }
+
+  .project-card:hover {
+    transform: translateY(-8px) scale(1.01);
   }
 
   .repo-name {
@@ -135,159 +504,300 @@
     padding-top: 0.75rem;
   }
 
-  .repo-stars {
-    margin-top: 5px;
-  }
-
-  .repo-languages {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 10px;
-  }
-
-  .repo-language {
-    margin: 3px;
-    padding: 3px 8px;
-    font-size: 12px;
-  }
-
   .live-button {
-    padding: 3px 8px;
+    padding: 4px 10px;
     font-size: 11px;
     margin-left: 5px;
   }
-}
 
-.project-card {
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(255, 255, 255);
-  padding: 2rem;
-  border-radius: 10px;
-  border: 1px solid rgba(211, 211, 211, 0.397);
-  justify-content: space-between;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.2);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transform-style: preserve-3d;
-  perspective: 1000px;
-  will-change: transform, box-shadow;
-  height: 300px;
-  width: 100%;
-}
-
-.dark-mode .project-card {
-  background-color: #171c28;
-  border: 1px solid #2c3341;
-}
-
-.project-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent 30%,
-    rgba(255, 255, 255, 0.1)
-  );
-  transform: translateX(-100%);
-  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.project-card:hover {
-  transform: translateY(-10px) scale(1.02) rotateX(2deg);
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.3);
-}
-
-.project-card:hover::before {
-  transform: translateX(100%);
-}
-
-/* Glow effect on hover */
-.project-card::after {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(
-    45deg,
-    rgba(100, 116, 139, 0.8),
-    rgba(148, 163, 184, 0.8),
-    rgba(203, 213, 225, 0.8),
-    rgba(226, 232, 240, 0.8)
-  );
-  border-radius: 12px;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.project-card:hover::after {
-  opacity: 0.7;
-}
-
-/* Content animations */
-.project-card:hover .repo-name {
-  transform: translateZ(20px);
-  text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
-}
-
-.project-card:hover .repo-description {
-  transform: translateZ(15px);
-}
-
-.project-card:hover .repo-details {
-  transform: translateZ(10px);
-}
-
-/* Language icons animation */
-.dev-icons-languages {
-  display: flex;
-  gap: 0.5rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.software-skill-inline-languages {
-  transition: all 0.3s ease;
-}
-
-.project-card:hover .software-skill-inline-languages {
-  transform: scale(1.1) translateZ(25px);
-  filter: brightness(1.1);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .project-card {
-    padding: 1.5rem;
+  /* Reduce animations on mobile */
+  .project-card:hover .software-skill-inline-languages {
+    animation: none;
   }
+}
 
-  .project-card:hover {
-    transform: translateY(-8px) scale(1.01) rotateX(1deg);
+@media (max-width: 480px) {
+  .project-card {
+    padding: 1.25rem;
   }
 
   .repo-name {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .repo-description {
-    font-size: 14px;
+    font-size: 13px;
+  }
+}
+
+/* ============================================
+     🎨 ACCESSIBILITY
+     ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  .project-card {
+    animation: none;
+    transition: none;
   }
 
-  .live-button {
-    font-size: 11px;
-    padding: 3px 8px;
-    margin-left: 0;
-    margin-top: 4px;
+  .project-card:hover {
+    transform: none;
+  }
+
+  .project-card:hover .repo-svg,
+  .project-card:hover .repo-star-svg,
+  .project-card:hover .software-skill-inline-languages {
+    animation: none;
+  }
+}
+
+/* ============================================
+     🎨 PERFORMANCE OPTIMIZATIONS
+     ============================================ */
+.project-card,
+.repo-svg,
+.repo-name,
+.repo-description,
+.repo-details,
+.software-skill-inline-languages,
+.live-button {
+  will-change: transform;
+}
+
+@media (hover: hover) {
+  .project-card:not(:hover) {
+    will-change: auto;
+  }
+}
+
+/* ============================================
+   PROJECT CARD STYLES
+   ============================================ */
+
+.project-card {
+  position: relative;
+  padding: 25px;
+  border-radius: 15px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border: 1px solid transparent;
+  overflow: hidden;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15) !important;
+  border-color: rgba(100, 255, 218, 0.3);
+}
+
+/* Header */
+.project-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.project-name {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+  flex: 1;
+}
+
+/* Description */
+.project-description {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+}
+
+/* Tech Stack Tags */
+.project-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.tech-tag {
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 11px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.tech-tag:hover {
+  transform: scale(1.05);
+}
+
+.tech-tag.more {
+  background: transparent !important;
+  font-style: italic;
+}
+
+/* ============================================
+   ACTION BUTTONS
+   ============================================ */
+
+.project-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.project-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Live Button */
+.live-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.live-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Explore Button */
+.explore-btn {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(17, 153, 142, 0.3);
+}
+
+.explore-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(17, 153, 142, 0.4);
+}
+
+/* Button Icons */
+.project-btn svg {
+  font-size: 14px;
+}
+
+/* Hint */
+.project-hint {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  color: #888;
+  opacity: 0;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.project-card:hover .project-hint {
+  bottom: 8px;
+  opacity: 1;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  .project-card {
+    padding: 20px;
+  }
+
+  .project-name {
+    font-size: 16px;
+  }
+
+  .project-description {
+    font-size: 13px;
+    -webkit-line-clamp: 2;
+  }
+
+  .project-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .project-btn {
+    padding: 12px;
+  }
+
+  .project-hint {
+    display: none;
+  }
+}
+
+/* ============================================
+   DARK/LIGHT THEME ADJUSTMENTS
+   ============================================ */
+
+/* Light Theme */
+.light-theme .project-card {
+  background: #0d0c0c;
+  border: 1px solid #e5e7eb;
+}
+
+.light-theme .project-card:hover {
+  border-color: #667eea;
+}
+
+/* Dark Theme */
+.dark-theme .project-card {
+  background: #1e1e1e;
+  border: 1px solid #333;
+}
+
+.dark-theme .project-card:hover {
+  border-color: #64ffda;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  position: relative;
+}
+
+.live-dot::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border: 2px solid #10b981;
+  border-radius: 50%;
+  animation: ringPulse 1.5s ease-out infinite;
+}
+
+@keyframes ringPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
   }
 }

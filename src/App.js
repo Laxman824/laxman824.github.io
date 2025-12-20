@@ -1,3 +1,4 @@
+// export default App;
 import React, { useState, useEffect, Suspense } from "react";
 import "./App.css";
 import Main from "./containers/Main";
@@ -18,8 +19,12 @@ function App() {
   const [showParticles, setShowParticles] = useState(() => {
     const savedParticles = localStorage.getItem("useParticles");
     if (savedParticles === null) {
-      localStorage.setItem("useParticles", "true");
-      return true;
+      // localStorage.setItem("useParticles", "false");
+      localStorage.setItem(
+        "useParticles",
+        JSON.stringify(settings.useParticles)
+      );
+      return settings.useParticles;
     }
     return JSON.parse(savedParticles);
   });
@@ -73,8 +78,10 @@ function App() {
                 color: "#fff",
                 boxShadow: `0 2px 10px ${themes[theme].accentColor}40`,
               }}
-              title={showParticles ? "Disable Particles" : "Enable Particles"}
             >
+              <span className="particles-label-hover">
+                {showParticles ? "Disable Particles" : "Enable Particles"}
+              </span>
               <span
                 className={`toggle-icon ${
                   showParticles ? "enabled" : "disabled"

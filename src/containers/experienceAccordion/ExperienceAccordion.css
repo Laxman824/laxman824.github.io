@@ -1,155 +1,548 @@
+/* Main experience accordion container */
 .experience-accord {
-  margin: 3rem auto;
-  max-width: 1200px;
-  padding: 0 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.accord-panel {
-  margin-bottom: 0;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  border: 1px solid rgba(211, 211, 211, 0.2);
   position: relative;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.accord-panel:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+/* Floating background elements */
+.experience-accord::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(
+    circle at center,
+    rgba(41, 98, 255, 0.12) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+  animation: floatExp 20s infinite ease-in-out;
+  z-index: 0;
 }
 
+.experience-accord::after {
+  content: "";
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 165, 0, 0.1) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+  animation: floatExp 25s infinite ease-in-out reverse;
+  z-index: 0;
+}
+
+@keyframes floatExp {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translate(40px, -40px) scale(1.1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-30px, 50px) scale(0.95);
+    opacity: 0.7;
+  }
+  75% {
+    transform: translate(-50px, -30px) scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+/* Enhanced accordion panel with glass morphism */
+.accord-panel {
+  position: relative;
+  margin-bottom: 30px;
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(30px) saturate(180%) brightness(1.1);
+  -webkit-backdrop-filter: blur(30px) saturate(180%) brightness(1.1);
+  border-radius: 20px !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12), 0 5px 15px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Glass reflection strip */
 .accord-panel::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: -50%;
+  left: -10%;
+  width: 40%;
+  height: 200%;
   background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0)
+    125deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 40%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0.08) 60%,
+    transparent 100%
   );
-  z-index: -1;
+  transform: rotate(25deg);
+  pointer-events: none;
+  opacity: 0.6;
+  filter: blur(2px);
+  z-index: 2;
+  transition: all 0.6s ease;
 }
 
+.accord-panel:hover::before {
+  left: 110%;
+  opacity: 0.9;
+}
+
+/* Top right corner accent */
+.accord-panel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+  border-right: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0 20px 0 0;
+  transition: all 0.5s ease;
+  z-index: 2;
+}
+
+.accord-panel:hover::after {
+  width: 80px;
+  height: 80px;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Enhanced hover effect */
+.accord-panel:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.18), 0 10px 25px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.15), 0 0 40px rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(35px) saturate(200%) brightness(1.15);
+  -webkit-backdrop-filter: blur(35px) saturate(200%) brightness(1.15);
+}
+
+/* Accordion panel header with glass effect */
 .accord-panel-header {
-  padding: 1.5rem 2rem;
+  position: relative;
+  padding: 20px 25px;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.02)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 3;
+  border-left: 6px solid transparent;
+  margin: 2px;
+}
+
+.accord-panel-header:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.04)
+  );
+  padding-left: 30px;
+}
+
+/* Header title styling */
+.accord-panel-header h3 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  font-family: "Google Sans Medium";
   transition: all 0.3s ease;
   position: relative;
-  overflow: hidden;
-  border-bottom: 1px solid rgba(211, 211, 211, 0.1);
-}
-
-.accord-panel-header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 6px;
-  height: 100%;
-  background: linear-gradient(to bottom, #2962ff, #82b1ff);
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: transform 0.4s ease;
-}
-
-.accord-panel-header:hover::before {
-  transform: scaleY(1);
-}
-
-.accord-panel-header h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin: 0;
-  transition: all 0.3s ease;
-  letter-spacing: 0.5px;
+  z-index: 4;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .accord-panel-header:hover h3 {
-  transform: translateX(10px);
-  color: #2962ff;
+  transform: translateX(5px);
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.accord-panel-header span {
-  font-size: 1.8rem;
+/* Count badge styling */
+.accord-panel-header h3 span {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  margin-left: 12px;
+  font-size: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   transition: all 0.3s ease;
-  width: 40px;
-  height: 40px;
+}
+
+.accord-panel-header:hover h3 span {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+}
+
+/* Toggle button (+ / -) styling */
+.accord-panel-header > span {
+  position: relative;
+  z-index: 4;
+  width: 35px;
+  height: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: rgba(41, 98, 255, 0.1);
+  font-size: 24px;
+  font-weight: bold;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.accord-panel-header:hover span {
+.accord-panel-header > span:hover {
+  transform: scale(1.15) rotate(90deg);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* Active state for toggle button */
+.accord-panel-header.active > span {
   transform: rotate(180deg);
-  background: rgba(41, 98, 255, 0.2);
 }
 
+/* Accordion panel content with glass effect */
 .accord-panel-content {
-  padding: 2rem;
-  display: grid;
-  gap: 2rem;
-  opacity: 0;
-  transform: translateY(-20px);
-  animation: slideDown 0.5s ease forwards;
+  position: relative;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 0 0 18px 18px;
+  margin-top: 5px;
+  animation: slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 3;
 }
 
 @keyframes slideDown {
   from {
     opacity: 0;
     transform: translateY(-20px);
+    max-height: 0;
   }
   to {
     opacity: 1;
     transform: translateY(0);
+    max-height: 2000px;
   }
 }
 
-/* Dark mode adjustments */
-.dark-mode .accord-panel {
-  background: rgba(29, 29, 29, 0.8);
-  border-color: rgba(255, 255, 255, 0.1);
+/* Content separator line */
+.accord-panel-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 25px;
+  right: 25px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent
+  );
 }
 
-.dark-mode .accord-panel-header::before {
-  background: linear-gradient(to bottom, #82b1ff, #2962ff);
+/* Section-specific color variants */
+.accord-panel[data-section="Work"] .accord-panel-header {
+  border-left-color: #2962ff;
 }
 
-.dark-mode .accord-panel-header:hover h3 {
-  color: #82b1ff;
+.accord-panel[data-section="Work"]:hover {
+  box-shadow: 0 25px 50px rgba(41, 98, 255, 0.15),
+    0 10px 25px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
+.accord-panel[data-section="Internships"] .accord-panel-header {
+  border-left-color: #ffa500;
+}
+
+.accord-panel[data-section="Internships"]:hover {
+  box-shadow: 0 25px 50px rgba(255, 165, 0, 0.15),
+    0 10px 25px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.accord-panel[data-section="Volunteerships"] .accord-panel-header {
+  border-left-color: #a7f432;
+}
+
+.accord-panel[data-section="Volunteerships"]:hover {
+  box-shadow: 0 25px 50px rgba(167, 244, 50, 0.15),
+    0 10px 25px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Bottom left corner accent */
+.accord-panel-corner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  border-left: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0 0 0 20px;
+  transition: all 0.5s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.accord-panel:hover .accord-panel-corner {
+  width: 80px;
+  height: 80px;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Light strip animation */
+.accord-panel-light {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.12),
+    transparent
+  );
+  pointer-events: none;
+  z-index: 1;
+  animation: slideAccordLight 8s infinite;
+}
+
+@keyframes slideAccordLight {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 150%;
+  }
+}
+
+/* Experience cards spacing within accordion */
+.accord-panel-content > div {
+  margin-bottom: 20px;
+}
+
+.accord-panel-content > div:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
   .experience-accord {
-    margin: 2rem auto;
-    padding: 0 1rem;
-    gap: 1.5rem;
+    padding: 30px 15px;
   }
 
-  .accord-panel-header {
-    padding: 1.25rem 1.5rem;
+  .accord-panel {
+    margin-bottom: 25px;
   }
 
   .accord-panel-header h3 {
-    font-size: 1.3rem;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-accord::before,
+  .experience-accord::after {
+    display: none;
+  }
+
+  .experience-accord {
+    padding: 20px 10px;
+  }
+
+  .accord-panel {
+    margin-bottom: 20px;
+  }
+
+  .accord-panel:hover {
+    transform: translateY(-3px) scale(1.005);
+  }
+
+  .accord-panel-header {
+    padding: 15px 20px;
+  }
+
+  .accord-panel-header:hover {
+    padding-left: 20px;
+  }
+
+  .accord-panel-header h3 {
+    font-size: 20px;
+  }
+
+  .accord-panel-header h3 span {
+    display: block;
+    margin-left: 0;
+    margin-top: 5px;
+    width: fit-content;
+  }
+
+  .accord-panel-header > span {
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
   }
 
   .accord-panel-content {
-    padding: 1.5rem;
-    gap: 1.5rem;
+    padding: 15px;
   }
+
+  .accord-panel::after,
+  .accord-panel-corner {
+    width: 40px;
+    height: 40px;
+  }
+
+  .accord-panel:hover::after,
+  .accord-panel:hover .accord-panel-corner {
+    width: 50px;
+    height: 50px;
+  }
+
+  .accord-panel-light {
+    animation: none;
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-accord {
+    padding: 15px 5px;
+  }
+
+  .accord-panel {
+    margin-bottom: 15px;
+  }
+
+  .accord-panel-header {
+    padding: 12px 15px;
+    flex-wrap: wrap;
+  }
+
+  .accord-panel-header h3 {
+    font-size: 18px;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .accord-panel-header > span {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+  }
+
+  .accord-panel-content {
+    padding: 12px;
+  }
+
+  .accord-panel-content > div {
+    margin-bottom: 15px;
+  }
+}
+
+/* Tablet landscape */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .accord-panel-header h3 {
+    font-size: 22px;
+  }
+}
+
+/* Animation for opening panels */
+.accord-panel.opening {
+  animation: panelPulse 0.4s ease-out;
+}
+
+@keyframes panelPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.01);
+  }
+}
+
+/* Focus states for accessibility */
+.accord-panel-header:focus {
+  outline: 2px solid rgba(124, 209, 247, 0.5);
+  outline-offset: 2px;
+}
+
+.accord-panel-header:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Loading state */
+.accord-panel.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.accord-panel.loading::before {
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 200%;
+  }
+}
+
+/* Empty state */
+.accord-panel-content.empty {
+  padding: 40px 25px;
+  text-align: center;
+  opacity: 0.6;
+}
+
+.accord-panel-content.empty::before {
+  display: none;
 }

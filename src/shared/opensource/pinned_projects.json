@@ -1,0 +1,103 @@
+{
+  "data": {
+    "user": {
+      "pinnedItems": {
+        "totalCount": 5,
+        "nodes": [
+          {
+            "id": "R_kgDONGSFOg",
+            "name": "pdf-processor-app",
+            "url": "https://github.com/Laxman824/pdf-processor-app",
+            "description": "Website for self deploy",
+            "primaryLanguage": {
+              "name": "Python",
+              "color": "#3572A5"
+            },
+            "owner": {
+              "login": "Laxman824",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/71651991?u=e300d9f17e9d1935288f3ce6afc01b2486c36d5e&v=4",
+              "url": "https://github.com/Laxman824"
+            },
+            "stargazers": {
+              "totalCount": 0
+            },
+            "forkCount": 0
+          },
+          {
+            "id": "R_kgDOITUQjQ",
+            "name": "Projects-Assignments",
+            "url": "https://github.com/Laxman824/Projects-Assignments",
+            "description": "All of these are some of the academic projects and assignments that have been done at IIT Delhi.",
+            "primaryLanguage": {
+              "name": "Python",
+              "color": "#3572A5"
+            },
+            "owner": {
+              "login": "Laxman824",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/71651991?u=e300d9f17e9d1935288f3ce6afc01b2486c36d5e&v=4",
+              "url": "https://github.com/Laxman824"
+            },
+            "stargazers": {
+              "totalCount": 4
+            },
+            "forkCount": 1
+          },
+          {
+            "id": "R_kgDOIhZYgg",
+            "name": "LiveSnapshotProject",
+            "url": "https://github.com/Laxman824/LiveSnapshotProject",
+            "description": "This is the project done in group of 6 and developed a live snapshot of VM ",
+            "primaryLanguage": {
+              "name": "Rust",
+              "color": "#dea584"
+            },
+            "owner": {
+              "login": "Laxman824",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/71651991?u=e300d9f17e9d1935288f3ce6afc01b2486c36d5e&v=4",
+              "url": "https://github.com/Laxman824"
+            },
+            "stargazers": {
+              "totalCount": 0
+            },
+            "forkCount": 0
+          },
+          {
+            "id": "R_kgDOIbPlSA",
+            "name": "INTERVIEWS-PREP",
+            "url": "https://github.com/Laxman824/INTERVIEWS-PREP",
+            "description": null,
+            "primaryLanguage": null,
+            "owner": {
+              "login": "Laxman824",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/71651991?u=e300d9f17e9d1935288f3ce6afc01b2486c36d5e&v=4",
+              "url": "https://github.com/Laxman824"
+            },
+            "stargazers": {
+              "totalCount": 3
+            },
+            "forkCount": 0
+          },
+          {
+            "id": "R_kgDONGV4IQ",
+            "name": "Field-OCR-Extraction",
+            "url": "https://github.com/Laxman824/Field-OCR-Extraction",
+            "description": "Website",
+            "primaryLanguage": {
+              "name": "Python",
+              "color": "#3572A5"
+            },
+            "owner": {
+              "login": "Laxman824",
+              "avatarUrl": "https://avatars.githubusercontent.com/u/71651991?u=e300d9f17e9d1935288f3ce6afc01b2486c36d5e&v=4",
+              "url": "https://github.com/Laxman824"
+            },
+            "stargazers": {
+              "totalCount": 0
+            },
+            "forkCount": 0
+          }
+        ]
+      }
+    }
+  }
+}

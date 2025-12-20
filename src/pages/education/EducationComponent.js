@@ -34,9 +34,7 @@ function Education(props) {
                   className="cap-emoji"
                   role="img"
                   aria-label="graduation cap"
-                >
-                  🎓
-                </span>
+                ></span>
               </h1>
               <h3 className="heading-sub-text" style={{ color: theme.text }}>
                 Qualification and Certifications
@@ -45,9 +43,9 @@ function Education(props) {
                 className="experience-header-detail-text subTitle"
                 style={{ color: theme.secondaryText }}
               >
-                I have done my B.Tech and M.Tech from IIT Delhi with CS Degree.
-                I actively participate in hackathons and other tech-related
-                activities. Below are some of my major certifications.
+                B.Tech and M.Tech in Computer Science from IIT Delhi foundation
+                in algorithms,AI/ML, and system design. Complemented by industry
+                certifications and hands-on project experience.
               </p>
             </div>
           </div>
