@@ -9,7 +9,7 @@
 .env.production.local
 
 # build output
-/build
+# /build
 /dist
 
 # misc
