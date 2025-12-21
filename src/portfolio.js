@@ -9,7 +9,7 @@
 const settings = {
   isSplash: true,
   useCustomCursor: false,
-  useParticles: true,
+  useParticles: false,
   googleTrackingID: "UA-174238252-2",
 };
 
@@ -894,7 +894,7 @@ const projects = {
       url:
         "https://www.businesstoday.in/personal-finance/news/story/cams-bets-big-on-ai-and-cloud-to-power-next-phase-of-mutual-fund-growth-501945-2025-11-12",
       description:
-        "Enterprise GenAI RAG platform processing 80,000+ financial documents with 95% accuracy and response in 7sec.",
+        "Enterprise GenAI RAG platform processing 80,000+ regulatory and financial documents with 95% accuracy and sub-7 second response time.",
       languages: [
         { name: "Google Cloud", iconifyClass: "logos:google-cloud" },
         { name: "Vertex AI", iconifyClass: "simple-icons:googlegemini" },
@@ -905,31 +905,52 @@ const projects = {
       ],
       details: {
         problem:
-          "Financial analysts at CAMS spent 4+ hours daily manually searching through 80,000+ regulatory documents, SEBI circulars, and compliance PDFs. Finding relevant information was slow, error-prone, and couldn't scale with growing regulatory requirements.",
+          "Financial analysts at CAMS spent 7+ hours daily manually searching through more than 80,000 regulatory documents, including SEBI circulars, AMFI guidelines, and compliance PDFs. The process was slow, error-prone, analyst-dependent, and failed to scale as regulatory volume and update frequency increased.",
+        // ✅ ADD THIS SECTION HERE
+        newsLinks: [
+          {
+            source: "Angel One",
+            title: "CAMS introduces AI tool for real-time analysis",
+            url:
+              "https://www.angelone.in/news/market-updates/cams-introduces-ai-tool-for-real-time-regulatory-analysis-in-mutual-funds",
+          },
+          {
+            source: "Economic Times",
+            title: "CAMS's technology and AI innovations powering growth",
+            url:
+              "https://economictimes.indiatimes.com/mf/mf-news/camss-technology-and-ai-innovations-powering-exponential-growth-in-mutual-fund-ecosystem-report/articleshow/125271022.cms",
+          },
+        ],
         solution:
-          "Built an AI-powered RAG (Retrieval Augmented Generation) platform that understands natural language queries and retrieves precise answers from the entire document corpus in seconds. Implemented semantic search with vector embeddings, custom ranking algorithms, and real-time RSS feed integration for automatic updates.",
+          "Designed and built an enterprise-grade RAG (Retrieval Augmented Generation) platform that allows analysts to ask natural language questions and receive precise, citation-backed answers in seconds. Implemented semantic search using vector embeddings, custom relevance ranking, and real-time RSS feed ingestion to ensure the system stays continuously updated with the latest regulatory content.",
+
         impact: [
-          "95% accuracy in document retrieval",
-          "Reduced research time from 4 hours to 5 minutes",
-          "Processing 80,000+ financial documents",
-          "1,000+ daily queries handled",
-          "Featured in Business Today & MoneyControl",
+          "95% accuracy in regulatory document retrieval",
+          "Reduced research time from 4+ hours to under 5 minutes",
+          "Indexed and searchable corpus of 80,000+ financial documents",
+          "Handling 1,000+ analyst queries per day in production",
+          "Actively used by compliance and research teams at CAMS",
+          "Featured in Business Today and MoneyControl",
         ],
+
         features: [
-          "Natural language query interface",
-          "Semantic search with vector embeddings",
-          "Real-time RSS feed monitoring for new circulars",
-          "Custom relevance ranking algorithm",
-          "Source citation with exact page numbers",
-          "Multi-document summarization",
-          "Query history and analytics dashboard",
+          "Natural language query interface for regulatory search",
+          "Semantic search using vector embeddings",
+          "Custom relevance ranking beyond cosine similarity",
+          "Exact source citations with document and page references",
+          "Real-time RSS feed monitoring for new SEBI and AMFI circulars",
+          "Automatic document ingestion and re-indexing",
+          "Multi-document summarization for faster analysis",
+          "Query history, usage tracking, and analytics dashboard",
         ],
+
         techStack: {
           frontend: ["React", "TailwindCSS", "Chart.js"],
           backend: ["Python", "FastAPI", "LangChain"],
           ai: ["Vertex AI", "Gemini Pro", "ChromaDB", "Embeddings API"],
           cloud: ["Google Cloud Run", "BigQuery", "Pub/Sub", "Cloud Storage"],
         },
+
         screenshots: [
           {
             title: "Query Interface",
@@ -944,47 +965,51 @@ const projects = {
             url: "/images/projects/camslens-dashboard.png",
           },
         ],
+
         codeSnippets: [
           {
             filename: "rag_pipeline.py",
             language: "python",
             code: `from langchain import VertexAI
-from chromadb import ChromaDB
-
-class RAGPipeline:
-    def __init__(self):
-        self.llm = VertexAI(model="gemini-pro")
-        self.vectordb = ChromaDB(collection="financial_docs")
+    from chromadb import ChromaDB
     
-    async def query(self, question: str) -> dict:
-        # Retrieve relevant document chunks
-        docs = self.vectordb.similarity_search(
-            query=question,
-            k=5,
-            filter={"doc_type": "circular"}
-        )
-        
-        # Generate answer with citations
-        response = await self.llm.agenerate(
-            prompt=self._build_prompt(docs, question),
-            temperature=0.1
-        )
-        
-        return {
-            "answer": response.text,
-            "sources": [d.metadata for d in docs]
-        }`,
+    class RAGPipeline:
+        def __init__(self):
+            self.llm = VertexAI(model="gemini-pro")
+            self.vectordb = ChromaDB(collection="financial_docs")
+    
+        async def query(self, question: str) -> dict:
+            # Retrieve relevant document chunks
+            docs = self.vectordb.similarity_search(
+                query=question,
+                k=5,
+                filter={"doc_type": "circular"}
+            )
+    
+            # Generate answer with citations
+            response = await self.llm.agenerate(
+                prompt=self._build_prompt(docs, question),
+                temperature=0.1
+            )
+    
+            return {
+                "answer": response.text,
+                "sources": [d.metadata for d in docs]
+            }`,
           },
         ],
+
         learnings: [
-          "Optimizing vector search for large document corpora (80k+ docs)",
-          "Balancing accuracy vs latency in production RAG systems",
-          "Building reliable RSS feed processors with error handling",
-          "Implementing custom ranking beyond cosine similarity",
+          "Designing and operating production-grade RAG systems at scale",
+          "Optimizing vector search latency vs retrieval accuracy",
+          "Building robust RSS ingestion pipelines with fault tolerance",
+          "Implementing custom ranking strategies beyond basic similarity",
+          "Running GenAI systems in regulated financial environments",
         ],
+
         timeline: "June 2024 - Present",
         role: "Lead Developer",
-        team: "Solo + 2 Reviewers",
+        team: "Solo Developer with 2 Technical Reviewers",
       },
     },
 
