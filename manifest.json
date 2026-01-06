@@ -1,6 +1,7 @@
 {
-  "short_name": "K Laxman",
   "name": "K Laxman Portfolio",
+  "background_color": "#ffffff",
+  "display": "standalone",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,8 +19,7 @@
       "sizes": "512x512"
     }
   ],
+  "short_name": "K Laxman",
   "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#252827",
-  "background_color": "#ffffff"
+  "theme_color": "#252827"
 }
