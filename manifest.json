@@ -1,7 +1,6 @@
 {
-  "name": "Create React App Sample",
-  "background_color": "#ffffff",
-  "display": "standalone",
+  "short_name": "K Laxman",
+  "name": "K Laxman Portfolio",
   "icons": [
     {
       "src": "favicon.ico",
@@ -19,7 +18,8 @@
       "sizes": "512x512"
     }
   ],
-  "short_name": "React App",
   "start_url": ".",
-  "theme_color": "#000000"
+  "display": "standalone",
+  "theme_color": "#252827",
+  "background_color": "#ffffff"
 }
