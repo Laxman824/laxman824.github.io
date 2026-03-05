@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkLaxman_portfolio=self.webpackChunkLaxman_portfolio||[]).push([[7338],{37338:(e,a,r)=>{r.d(a,{createArchitectureServices:()=>c.S});var c=r(73064);r(53495)}}]);
