@@ -2,6 +2,17 @@
 <html lang="en">
 
 <head>
+    <script>
+        // SPA fallback: a /blog/<slug> published after the last deploy has no
+        // prerendered file yet — bounce to the app via the ?p= convention
+        // that index.html's redirect handler already understands.
+        (function () {
+            var p = location.pathname;
+            if (/^\/blog\/.+/.test(p)) {
+                location.replace("/?p=" + p);
+            }
+        })();
+    </script>
     <meta charset="utf-8">
     <meta name="robots" content="noindex">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
