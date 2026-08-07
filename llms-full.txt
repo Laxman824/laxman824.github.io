@@ -1,0 +1,1420 @@
+# K Laxman — all 26 projects in full
+
+> Senior AI Engineer at Think360 AI (CAMS) and IIT Delhi graduate (M.Tech & B.Tech, Computer Science). Builds production Generative AI systems end to end: LLM-powered applications, Retrieval-Augmented Generation (RAG) pipelines, multi-agent orchestration, and full-stack products with React, Python and cloud infrastructure.
+
+Source: https://laxman824.github.io/projects · Concise index: https://laxman824.github.io/llms.txt
+
+---
+
+## CAMS Lens — SEBI-Grounded Compliance Intelligence Platform
+
+- URL: https://laxman824.github.io/projects/cams-lens
+- Live/source: https://camslens.camsai.com/
+- Role: AI Architect & Lead Engineer (Solo Developer)
+- Timeline: June 2024 - Present
+- Team: Independently built core AI, backend, and deployment infrastructure
+- Technologies: RAG, Google Cloud, Vertex AI, Cloud Run, AlloyDB, BigQuery, Python, AI/ML
+
+Productionized an enterprise-grade GenAI compliance platform leveraging RAG over 80,000+ SEBI and financial regulatory documents. Achieved 95% retrieval precision with sub-7-second response latency, delivering audit-ready, citation-backed outputs in regulated financial environments. The system auto-ingests new files without human intervention and scales automatically with growing regulatory updates.
+
+### Problem
+
+Mutual Fund compliance and research teams manually reviewed 80,000+ SEBI circulars, AMFI guidelines, and regulatory documents, spending 4–7 hours per analyst daily. The process was fragmented, interpretation-heavy, audit-sensitive, and failed to scale with increasing regulatory updates.
+
+### Solution
+
+Deployed a SEBI-grounded Retrieval-Augmented Generation (RAG) system enabling compliance officers to query regulatory documents in natural language and receive precise, citation-backed answers. Built structured regulatory taxonomy (27 intermediaries, 150+ subcategories), persona-based outputs (Compliance, BRD, SOP, FAQ), and automated RSS ingestion for real-time circular updates.
+
+### Impact
+
+- 95% retrieval precision with citation enforcement
+- Reduced regulatory research time from 4+ hours to under 5 minutes
+- Indexed 80,000+ regulatory documents with structured metadata
+- Processing 1,000+ compliance queries daily in production
+- Enabled automated BRD and SOP generation for regulatory changes
+- Publicly covered by major financial publications
+
+### Key features
+
+- SEBI-grounded RAG engine with strict citation validation
+- Custom retrieval ranking beyond cosine similarity (metadata-aware scoring)
+- Persona-based outputs: Compliance checklist, BRD, SOP, FAQ
+- Regulatory taxonomy across 27 intermediaries & 150+ subcategories
+- Automated RSS ingestion pipeline for real-time circular updates
+- Multi-document contextual synthesis with traceable references
+- Query analytics and usage monitoring dashboard
+- Audit-ready transparency with document and page-level citations
+
+### Tech stack
+
+- frontend: React, TailwindCSS, Chart.js
+- backend: Python, FastAPI
+- ai: Vertex AI (Gemini), Custom RAG Pipeline, ChromaDB
+- cloud: Cloud Run, BigQuery, Pub/Sub, Cloud Storage, AlloyDB
+
+### Architecture highlights
+
+- End-to-end ingestion pipeline: RSS → Parsing → Chunking → Embedding → Indexing
+- Metadata-aware vector filtering (doc_type, intermediary, category)
+- Prompt templating with compliance-focused grounding constraints
+- Latency optimization via async retrieval and batched embeddings
+- Monitoring: Query logging, citation validation, failure tracking
+
+### Learnings
+
+- Designing production-grade RAG systems in regulated financial environments
+- Mitigating hallucination through strict grounding and citation enforcement
+- Balancing retrieval precision vs latency under enterprise constraints
+- Building scalable document ingestion pipelines with fault tolerance
+- Translating regulatory circulars into operational artifacts (BRD/SOP automation)
+- Optimizing GenAI cost-performance tradeoffs in production
+
+### Press coverage
+
+- CAMS introduces AI tool for real-time regulatory analysis — Angel One: https://www.angelone.in/news/market-updates/cams-introduces-ai-tool-for-real-time-regulatory-analysis-in-mutual-funds
+- CAMS’s technology and AI innovations powering growth — Economic Times: https://economictimes.indiatimes.com/mf/mf-news/camss-technology-and-ai-innovations-powering-exponential-growth-in-mutual-fund-ecosystem-report/articleshow/125271022.cms
+
+---
+
+## CAMSCode — Enterprise AI Coding Assistant
+
+- URL: https://laxman824.github.io/projects/camscode
+- Live/source: https://drive.google.com/file/d/1PTXG45x_DptJQvzL3Nozgnn_fGjLXl71/view?usp=drivesdk
+- Role: AI Engineer & Solo Developer
+- Timeline: 2026
+- Team: Independently designed, built, and deployed within CAMS infrastructure
+- Technologies: AI/ML, Agentic AI, MCP Servers, Ollama, RAG, Google Cloud, Vertex AI, Cloud Run, Python, FastAPI, Azure AD
+
+Built an internal, secure, private alternative to GitHub Copilot deployed entirely within CAMS infrastructure. Autonomously converts PRDs and HLDs into production-ready full-stack applications using 80+ custom tools and MCP servers — reducing development time by ~80% while ensuring regulated financial data never traverses public endpoints.
+
+### Problem
+
+CAMS developers had no access to AI coding assistants like GitHub Copilot due to enterprise data security constraints — sending source code and business logic to external LLM APIs was prohibited in a regulated financial environment. Teams were losing significant productivity with no compliant alternative.
+
+### Solution
+
+Built CAMSCode, a fully internal AI coding assistant that orchestrates Gemini 2.5 Flash via a zero-trust GCP identity pipeline (Azure AD → Workload Identity Federation → Service Account Impersonation), ensuring no data leaves the CAMS network. The system autonomously converts PRDs and HLDs into production-ready full-stack applications including frontend, backend, DB schema, REST APIs, auth, and UI.
+
+### Impact
+
+- Reduced end-to-end development time by ~80% from making POC to production-ready full-stack web apps
+- Eliminated long-lived credentials — all access via short-lived federated tokens
+- Validated by autonomously building QInspect Pro a full stack web app in a single session
+- Regulated financial data never traverses public endpoints
+- Sandboxed execution environment with zero risk of code leakage
+
+### Key features
+
+- PRD/HLD to production-ready full-stack app generation
+- Sandboxed file system operations and shell command orchestration
+- Automated dependency management and background process control
+- Live log monitoring, automated testing, and Git version control
+- Zero-trust LLM access: Azure AD → Workload Identity Federation → Service Account Impersonation
+- CMEK encryption and VPC-restricted Cloud Run deployments
+- Token caching with automatic refresh for seamless developer experience
+
+### Tech stack
+
+- frontend: React JS, Javascript  (ES6), TailwindCSS
+- backend: Python, FastAPI, SQLite
+- ai: Vertex AI (Gemini 2.5 Flash), LLM Tool Orchestration
+- cloud: Cloud Run, Workload Identity Federation, Azure AD, GCP VPC, CMEK
+
+### Architecture highlights
+
+- Identity pipeline: Azure AD → Workload Identity Federation → Service Account Impersonation
+- Sandboxed execution: file ops, shell orchestration, dependency management all isolated
+- Token layer: caching + auto-refresh with corporate proxy compatibility
+- VPC-restricted Cloud Run — no public endpoint exposure
+- Validated via QInspect Pro: 20-parameter AI scoring engine, RBAC, audit trails, Excel exports
+
+### Learnings
+
+- Designing zero-trust LLM access pipelines in regulated enterprise environments
+- Building sandboxed AI execution toolchains with production-grade safety guarantees
+- Orchestrating LLMs as autonomous developers rather than code completion tools
+- Implementing short-lived federated identity flows to eliminate credential risk
+- Balancing developer productivity with strict enterprise security constraints
+
+---
+
+## Intelligent Document Processing (IDP) - Multi-Agent System
+
+- URL: https://laxman824.github.io/projects/intelligent-document-processing
+- Live/source: https://github.com/Laxman824/
+- Role: AI Engineer
+- Timeline: Jan 2025 - Present
+- Team: Core AI Team
+- Technologies: LangGraph, Gemini 2.5, Vertex AI, Python, Pydantic, Docker
+
+Enterprise-level Multi-Agent Orchestration Framework using LangGraph and Gemini 2.5 Flash to automate data extraction from complex Mutual Fund forms. Features self-correcting agents and confidence-based automation.
+
+### Problem
+
+Processing complex financial documents (such as Mutual Fund redemption requests and multi-page TIFFs) was a manual bottleneck. The lack of standardized layouts, presence of handwritten text, and strict compliance requirements made traditional OCR insufficient, resulting in slow turnaround times and high operational costs for manual verification.
+
+### Solution
+
+Engineered a Multi-Agent Orchestration Framework using LangGraph to handle the full document lifecycle. The system utilizes a 'Router-Extractor-Auditor' architecture where a Semantic Router classifies documents, a Vision Extractor (Gemini 2.5) pulls structured data, and a Self-Reflective Auditor enforces business logic. If validation fails, the Auditor triggers a feedback loop, prompting the Extractor to self-correct before final output.
+
+### Impact
+
+- Achieved Straight-Through Processing (STP) for high-confidence documents
+- Automated extraction of Folios, PANs, and Signatures from unstructured inputs
+- Reduced manual verification effort by utilizing confidence-based gating
+- Implemented self-healing workflows where agents correct their own errors
+- Standardized output formats using Pydantic schema validation
+
+### Key features
+
+- Multi-Agent Orchestration using LangGraph state machines
+- Multimodal extraction (Text + Vision) for scanned TIFFs/PDFs
+- Semantic Routing to dynamically select extraction schemas
+- Self-Reflective Auditor agent for automated quality control
+- Feedback loops for Hallucination reduction
+- Confidence-Based Gating for hybrid AI-Human workflows
+
+### Tech stack
+
+- backend: Python, LangGraph, LangChain
+- ai: Google Vertex AI, Gemini 2.5 Flash, Vision APIs
+- data: Pydantic, Pandas, JSON Structured Output
+- infrastructure: GCP, Docker, Cloud Run
+
+### Learnings
+
+- Orchestrating stateful multi-agent systems with cyclic graphs
+- Prompt engineering for multimodal LLMs (Vision + Text)
+- Implementing 'Reflection' patterns to reduce AI hallucinations
+- Balancing cost vs. accuracy with Gemini Flash models
+- Enforcing strict JSON schemas using Pydantic in production
+
+---
+
+## Dialogflow CX Virtual Agent — Financial Services Chatbot & Voicebot (GCP / CCAI)
+
+- URL: https://laxman824.github.io/projects/dialogflow-cx-virtual-agent
+- Live/source: https://cloud.google.com/dialogflow/cx/docs
+- Role: AI Engineer
+- Timeline: 2025
+- Team: Solo Developer
+- Technologies: Dialogflow CX, CCAI Telephony, Vertex AI, Gemini 2.5 Flash, Python, IaC
+
+Built and launched a production-style Dialogflow CX virtual agent for banking/financial services on GCP, covering 6+ customer intents (account statements, balance, transaction history, fund transfer, bill payment, contact updates). Shipped as both a chatbot and an inbound-telephony voicebot via CCAI, provisioned end-to-end as Python Infrastructure-as-Code instead of manual console configuration.
+
+### Problem
+
+Banking/financial-services support for account statements, balances, transaction history, fund transfers, bill payments, and contact updates was handled manually or through rigid IVR trees, with no reusable, reproducible way to provision and redeploy the same conversational logic across chat and voice channels.
+
+### Solution
+
+Designed the complete Dialogflow CX conversation graph — intents → entity types → flows → pages → form parameters → routes — with fuzzy entity extraction and multi-turn slot-filling, provisioned entirely as Python Infrastructure-as-Code on the Dialogflow CX SDK. Shipped the same agent as a voicebot for inbound telephony with natural Indian-English (en-IN) Neural2 speech, barge-in, and spell correction, wiring the CCAI Telephony integration so one virtual agent serves both chat and voice callers.
+
+### Impact
+
+- Reduced agent build/redeploy time from days to a single command
+- One virtual agent serves both chat and voice (CCAI Telephony) callers
+- Idempotent, reproducible provisioning across environments (no manual console clicks)
+- Quantified deterministic-NLU vs. generative trade-offs for solution-architecture recommendations
+
+### Key features
+
+- 6+ customer intents: account statements, balance, transaction history, fund transfer, bill payment, contact updates
+- Full conversation graph: intents, entity types, flows, pages, form parameters, routes
+- Fuzzy entity extraction and multi-turn slot-filling
+- en-IN Neural2 voice with barge-in, spell correction, and Cloud logging
+- CCAI Telephony integration for inbound calls
+- Idempotent Python provisioning scripts (entities, intents, flows, pages, routes) via the Dialogflow CX API
+- Prototyped Vertex AI Gemini 2.5 Flash generative alternative: LLM intent classification, session memory, parameter validation
+
+### Tech stack
+
+- conversationalAI: Dialogflow CX, CCAI Telephony
+- ai: Vertex AI, Gemini 2.5 Flash
+- backend: Python, Dialogflow CX SDK
+- cloud: Google Cloud Platform, Cloud Logging
+
+### Architecture highlights
+
+- Conversation graph: intents → entity types → flows → pages → form parameters → routes
+- Single agent, dual channel: chat + CCAI Telephony voicebot
+- Python IaC provisioning scripts for entities, intents, flows, pages, and routes via the Dialogflow CX API
+- Generative alternative prototyped on Vertex AI Gemini 2.5 Flash for intent classification, session memory, and parameter validation
+
+### Learnings
+
+- Modeling multi-turn banking conversations as a flows/pages/routes state graph with slot-filling
+- Trade-offs between deterministic NLU (Dialogflow CX) and generative LLM-driven intent classification
+- Provisioning conversational AI infrastructure as reproducible, idempotent code rather than console clicks
+- Tuning telephony-specific speech settings (en-IN Neural2, barge-in, spell correction) for a natural voicebot experience
+
+---
+
+## OpsPilot — Agentic Request Triage & Remediation System
+
+- URL: https://laxman824.github.io/projects/opspilot
+- Live/source: https://opspilot-autonomous-agent.streamlit.app/
+- Role: AI Engineer & Solo Developer
+- Timeline: 2026
+- Team: Solo Developer (proof-of-concept / take-home style build, ~3 days)
+- Technologies: Gemini 2.5, Python, Streamlit, SQLite, Pandas, Altair
+
+Developed an end-to-end Agentic AI platform that automates customer support operations by understanding incoming emails, planning intelligent remediation workflows, validating decisions through policy guardrails, and providing transparent execution with human oversight and complete auditability.
+
+### Problem
+
+Built OpsPilot, an AI-powered Agentic Operations platform that transforms incoming customer emails into intelligent, policy-aware workflows. The system leverages LLMs to classify requests, generate explainable multi-step remediation plans, execute automated actions with human-in-the-loop safeguards, and maintain a complete audit trail—demonstrating production-ready AI orchestration, governance, and operational transparency.
+
+### Solution
+
+Built a custom, framework-free ~140-line agent loop (no LangChain/AutoGPT) with 7 stages: perceive (30-day sender-history recall), plan (one Gemini 2.5 call producing both classification and an ordered, justified tool-call plan), guard (a deterministic policy layer validates the plan against a per-request-type playbook — inserting missing mandatory steps, stripping forbidden ones, capping length), gate (confidence-based routing to a human review queue), act (executes the final plan through a 12-tool registry), reflect (a critic LLM call reviews and rewrites any customer-facing draft against a compliance checklist), and record (every classification, both plan versions, every guardrail repair, and every tool result persisted to SQLite for per-case replay).
+
+### Impact
+
+- "Agent proposes, policy disposes": guardrails.py encodes each request type's mandatory/optional/forbidden actions as data, so a deterministic function — not the LLM — has final say over what actually executes
+- 3-tier resilience chain (primary model → fallback model → offline keyword classifier) means the app degrades gracefully instead of crashing on API quota errors or a missing key
+- Fused classify+plan into a single structured-output call, roughly halving LLM request volume versus separate calls and keeping the plan's rationale coherent with the classification's
+- Live dashboard computes real stats (avg confidence, % plans repaired, % human-overridden, status mix) directly from the audit database rather than hardcoded numbers
+
+### Key features
+
+- JSON-schema-constrained Gemini call returns classification (type, urgency, confidence, sentiment, rationale, department) and an ordered, justified remediation plan in one pass
+- Policy-guardrail layer (guardrails.py) repairs agent-proposed plans against a per-type playbook and logs every repair for audit
+- Confidence-gated human review queue: reclassify, keep/drop individual plan steps, approve — case re-enters the same pipeline tagged as a human override
+- Critic/reflection pass rewrites any customer-facing draft that fails a 5-point compliance checklist, showing original vs. revised text side-by-side
+- Sender-memory recall: looks up a sender's 30-day case history and folds it into the planning prompt, so repeat complainants get urgency bumps and supervisor alerts
+- 12-tool action catalog (draft reply, KB lookup, structured extraction, routing, escalation, supervisor alert, SLA timer, human hold, simulated send, mark resolved, etc.) with stable, swappable-for-real-integrations contracts
+- Full SQLite audit trail (cases / plans / audit_log) with a per-case drill-down UI that replays the entire reasoning trace on demand
+- Batch CSV tab processes a queue of requests sequentially with a progress bar, throttled to the Gemini free-tier rate limit
+
+### Tech stack
+
+- ai: Gemini 2.5 Flash, Gemini 2.5 Flash-Lite, google-genai (structured output)
+- backend: Python 3.12, Streamlit
+- data: SQLite, pandas
+- viz: Altair
+
+### Architecture highlights
+
+- 7-stage agent loop (perceive → plan → guard → gate → act → reflect → record) implemented as a single ~140-line module, no agent framework dependency
+- Guardrail playbooks per request type (Complaint, General Enquiry, Service Request, Escalation/Urgent) each define mandatory, optional, and forbidden steps plus a terminal status
+- SQLite schema stores both the agent's originally proposed plan and the guardrail-repaired final plan per case, enabling a diff view of what the agent wanted vs. what policy allowed
+- Try/except-wrapped tool execution means a single tool failure marks remaining steps SKIPPED and flags the case, rather than crashing the run
+
+### Learnings
+
+- Encoding business policy as plain data structures that a deterministic function validates against is more reliable than trusting an LLM to self-enforce rules
+- Fusing classification and planning into one structured-output call cuts API usage without sacrificing plan-rationale coherence
+- A confidence-capped offline fallback (keyword-based, no API) is a simple way to guarantee an app never silently fails when a model or key is unavailable
+- Designing tool contracts (`(req, cls, params, ctx) -> ToolResult`) up front makes 'simulate now, wire in real integrations later' a contained change instead of a rewrite
+
+---
+
+## NexGenGaming - E-Commerce Platform
+
+- URL: https://laxman824.github.io/projects/nexgengaming-ecommerce
+- Live/source: https://gaming-ecommerce-fronted.vercel.app/
+- Role: Full Stack Developer
+- Timeline: March 2024 - May 2024
+- Team: Solo Project
+- Technologies: React, Node.js, MongoDB, Express, Firebase, TailwindCSS, Vercel
+
+Full-stack gaming e-commerce with real-time inventory, order tracking, and payment integration.
+
+### Problem
+
+Gaming enthusiasts in India struggle to find authentic gaming consoles and accessories. Existing platforms lack real-time inventory updates, have poor user experience, and don't provide transparent order tracking.
+
+### Solution
+
+Built a modern, responsive e-commerce platform specifically for gaming products. Features real-time inventory sync, seamless checkout with multiple payment options, order tracking, and an admin dashboard for inventory management.
+
+### Impact
+
+- 100+ products listed with real-time stock updates
+- Seamless checkout experience
+- Mobile-first responsive design
+- Admin dashboard for complete control
+
+### Key features
+
+- Product catalog with filtering & search
+- Real-time inventory management
+- Shopping cart with persistent storage
+- Secure payment gateway integration
+- Order tracking & history
+- Admin dashboard for CRUD operations
+- Responsive design for all devices
+- User authentication with Firebase
+
+### Tech stack
+
+- frontend: React, TailwindCSS, React Router, Context API
+- backend: Node.js, Express, MongoDB, Mongoose
+- cloud: Firebase Auth, Vercel, MongoDB Atlas
+- tools: Stripe/Razorpay, Cloudinary, JWT
+
+### Learnings
+
+- Building scalable e-commerce architecture
+- Real-time inventory sync across multiple sessions
+- Payment gateway integration best practices
+- Optimizing MongoDB queries for product search
+
+---
+
+## RoomFlow - AI Booking System
+
+- URL: https://laxman824.github.io/projects/roomflow-ai-booking
+- Live/source: https://workspace-booking-system.vercel.app/
+- Role: Full Stack Developer
+- Timeline: April 2024 - June 2024
+- Team: Solo Project
+- Technologies: React, TypeScript, Node.js, Express, Vite, PostgreSQL, TailwindCSS
+
+AI-assisted workspace booking platform with dynamic pricing, real-time conflict prevention, and admin analytics.
+
+### Problem
+
+Managing workspace bookings manually leads to double-bookings, pricing inconsistencies, and no visibility into space utilization. Employees waste time coordinating meeting rooms and admins lack analytics.
+
+### Solution
+
+Built an intelligent booking platform with AI-powered natural language booking ('Book me a room for 10 people tomorrow at 3 PM'), dynamic pricing based on demand, real-time conflict detection, and comprehensive analytics for admins.
+
+### Impact
+
+- Zero double-booking incidents
+- 30% increase in space utilization
+- Natural language booking support
+- Real-time availability updates
+
+### Key features
+
+- Natural language booking with LLM
+- Dynamic pricing based on peak hours
+- Real-time conflict prevention
+- Interactive calendar view
+- Cancellation policies & refunds
+- Admin analytics dashboard
+- Email notifications
+- Multi-timezone support
+
+### Tech stack
+
+- frontend: React, TypeScript, Vite, TailwindCSS, FullCalendar
+- backend: Node.js, Express, TypeScript, Prisma
+- database: PostgreSQL, Redis (caching)
+- cloud: Vercel, Render, Supabase
+
+### Learnings
+
+- Implementing real-time conflict detection at scale
+- Building dynamic pricing algorithms
+- TypeScript best practices for full-stack apps
+- LLM integration for natural language interfaces
+
+---
+
+## SEBI Debarred PAN Extraction
+
+- URL: https://laxman824.github.io/projects/sebi-debarred-pan-extraction
+- Live/source: https://github.com/Laxman824/
+- Role: Backend Developer
+- Timeline: August 2024 - October 2024
+- Team: Solo + Compliance Team Review
+- Technologies: Python, Google Cloud, Vertex AI, Firestore, Pub/Sub, Docker
+
+Cloud-native backend monitoring SEBI regulatory orders, extracting debarred PAN details using AI-powered document parsing.
+
+### Problem
+
+SEBI regularly publishes orders debarring individuals from securities markets. Compliance teams manually read 100+ page PDF orders to extract PAN numbers of debarred entities - a time-consuming, error-prone process critical for KYC compliance.
+
+### Solution
+
+Built an automated pipeline that monitors SEBI website for new orders, downloads PDFs, uses AI (Gemini) to extract PAN numbers and debarment details, and stores structured data in Firestore. Event-driven architecture ensures real-time processing.
+
+### Impact
+
+- 100% automation of PAN extraction
+- Processing orders within minutes of publication
+- Zero manual intervention required
+- Structured compliance database
+
+### Key features
+
+- Automated SEBI website monitoring
+- PDF download and text extraction
+- AI-powered PAN number detection
+- Debarment period extraction
+- Duplicate detection and deduplication
+- Real-time Pub/Sub event processing
+- Firestore database with search
+- Alert notifications for new orders
+
+### Tech stack
+
+- backend: Python, FastAPI, BeautifulSoup, PyPDF2
+- ai: Vertex AI, Gemini Pro, Document AI
+- cloud: Cloud Run, Pub/Sub, Cloud Scheduler, Firestore
+- tools: Docker, Cloud Build, Secret Manager
+
+### Learnings
+
+- Building event-driven architectures on GCP
+- Combining regex and AI for robust extraction
+- Handling unstructured PDF documents at scale
+- Designing for regulatory compliance requirements
+
+---
+
+## AI-Powered Email Automation
+
+- URL: https://laxman824.github.io/projects/ai-email-automation
+- Live/source: https://github.com/Laxman824/
+- Role: ML Engineer
+- Timeline: July 2024 - September 2024
+- Team: Solo + Integration Team
+- Technologies: Python, Google Cloud, FastAPI, LLM, vLLM, Docker, REST API
+
+Intelligent microservice classifying financial emails with 95% accuracy. Extracts PAN, ARN codes using LLM zero-shot learning.
+
+### Problem
+
+CAMS receives 1,000+ emails daily from mutual fund distributors, investors, and AMCs. Each email needs classification (complaint, query, transaction request) and extraction of key identifiers (PAN, Folio, ARN) for routing. Manual processing was slow and inconsistent.
+
+### Solution
+
+Built an AI microservice using LLMs for zero-shot email classification and named entity extraction. The system classifies emails into 15+ categories, extracts structured data (PAN, dates, amounts), and routes to appropriate teams - all without training data.
+
+### Impact
+
+- 95% classification accuracy
+- Processing 1,000+ emails daily
+- 80% reduction in manual work
+- Sub-second response time
+
+### Key features
+
+- Zero-shot email classification (15+ categories)
+- PAN, ARN, Folio number extraction
+- Date and amount detection
+- Sentiment analysis for prioritization
+- Confidence scoring for human review
+- REST API for integration
+- Batch processing support
+- Audit logging for compliance
+
+### Tech stack
+
+- backend: Python, FastAPI, Pydantic, asyncio
+- ai: vLLM, Mistral-7B, LangChain, Instructor
+- infrastructure: Docker, Kubernetes, Redis
+- monitoring: Prometheus, Grafana, Sentry
+
+### Learnings
+
+- Deploying LLMs in production with vLLM
+- Structured output generation with Instructor
+- Building high-throughput async APIs
+- Zero-shot vs fine-tuned model tradeoffs
+
+---
+
+## IPO Monitoring System
+
+- URL: https://laxman824.github.io/projects/ipo-monitoring-system
+- Live/source: https://ipo-monitor-gmp.streamlit.app/Dashboard
+- Role: Full Stack Developer
+- Timeline: January 2024 - February 2024
+- Team: Solo Project
+- Technologies: Python, Streamlit, Pandas, Web Scraping
+
+Real-time IPO Grey Market Premium monitoring with automated notifications for investment decisions.
+
+### Problem
+
+IPO investors need to track Grey Market Premium (GMP) across multiple sources to make informed listing day decisions. Manually checking websites multiple times daily is tedious, and investors often miss optimal buying/selling windows.
+
+### Solution
+
+Built a real-time dashboard that scrapes GMP data from multiple sources, tracks historical trends, calculates expected listing gains, and sends automated alerts when GMP crosses user-defined thresholds.
+
+### Impact
+
+- Real-time GMP tracking for 20+ IPOs
+- Historical trend analysis
+- Automated price alerts
+- 500+ active users
+
+### Key features
+
+- Live GMP data from multiple sources
+- Historical GMP trend charts
+- Expected listing price calculator
+- Subscription status tracking
+- Category-wise analysis (Retail, HNI, QIB)
+- Price alert notifications
+- IPO calendar with key dates
+- Comparison across IPOs
+
+### Tech stack
+
+- frontend: Streamlit, Plotly, Altair
+- backend: Python, Pandas, BeautifulSoup, Requests
+- database: SQLite, CSV caching
+- deployment: Streamlit Cloud, GitHub Actions
+
+### Learnings
+
+- Building real-time data scrapers with rate limiting
+- Creating interactive dashboards with Streamlit
+- Handling inconsistent data from multiple sources
+- Deploying data apps on Streamlit Cloud
+
+---
+
+## Autonomous Multi-Agent Banking
+
+- URL: https://laxman824.github.io/projects/autonomous-multi-agent-banking
+- Live/source: https://github.com/laxman824
+- Role: AI Engineer
+- Timeline: October 2024 - December 2024
+- Team: Solo + Banking SME Consultation
+- Technologies: CrewAI, LangChain, Dialogflow CX, Vertex AI, Python, Google Cloud
+
+Advanced agentic workflow with 7 specialized AI agents using CrewAI and Gemini 2.5 for banking operations.
+
+### Problem
+
+Banking operations involve complex multi-step workflows (loan processing, KYC verification, fraud detection) that require coordination between multiple departments. Manual handoffs cause delays, errors, and poor customer experience.
+
+### Solution
+
+Built an autonomous multi-agent system where specialized AI agents (Receptionist, Validator, Loan Specialist, Fraud Detector, etc.) collaborate to handle complex banking requests. Agents autonomously route tasks, validate inputs, and escalate when needed.
+
+### Impact
+
+- 7 specialized AI agents working in coordination
+- Autonomous task routing and delegation
+- 90% reduction in processing time
+- 24/7 availability for customer requests
+
+### Key features
+
+- Receptionist Agent for intent detection
+- Validator Agent for input verification
+- Loan Specialist for credit assessment
+- KYC Agent for identity verification
+- Fraud Detection Agent for anomaly detection
+- Escalation Agent for human handoff
+- Audit Agent for compliance logging
+- Inter-agent communication protocol
+
+### Tech stack
+
+- framework: CrewAI, LangChain, LangGraph
+- ai: Gemini 2.5 Pro, Vertex AI, Function Calling
+- backend: Python, FastAPI, Redis
+- cloud: Google Cloud Run, Pub/Sub, Firestore
+
+### Learnings
+
+- Designing multi-agent communication protocols
+- Handling agent failures and fallbacks gracefully
+- Balancing autonomy with human oversight
+- Optimizing token usage across multiple agents
+
+---
+
+## RSS Document Downloader
+
+- URL: https://laxman824.github.io/projects/rss-document-downloader
+- Live/source: https://rss-feed-reader-and-pdf-downloader.streamlit.app/
+- Role: Developer
+- Timeline: February 2024
+- Team: Solo Project
+- Technologies: Python, RSS, PDF Processing, Streamlit
+
+Automated document downloading from RSS feeds for real-time regulatory content acquisition.
+
+### Problem
+
+Compliance teams need to monitor multiple regulatory RSS feeds (SEBI, RBI, AMFI) daily and download new circulars. Manual monitoring is tedious and risks missing critical updates.
+
+### Solution
+
+Built an automated tool that monitors multiple RSS feeds, detects new documents, downloads PDFs automatically, organizes them by source/date, and provides a searchable interface for the document library.
+
+### Impact
+
+- Monitoring 10+ regulatory RSS feeds
+- Automatic download of new documents
+- Zero missed circulars
+- Searchable document archive
+
+### Key features
+
+- Multi-feed RSS monitoring
+- Automatic PDF download
+- Duplicate detection
+- Date-based organization
+- Full-text search in documents
+- Download history tracking
+- Email notifications for new docs
+- Scheduled monitoring jobs
+
+### Tech stack
+
+- frontend: Streamlit
+- backend: Python, feedparser, requests, PyPDF2
+- storage: Local filesystem, SQLite
+- deployment: Streamlit Cloud
+
+### Learnings
+
+- Parsing various RSS feed formats reliably
+- Handling network failures with retries
+- Building incremental sync mechanisms
+- Creating user-friendly document management UIs
+
+---
+
+## MSG to PDF Converter
+
+- URL: https://laxman824.github.io/projects/msg-to-pdf-converter
+- Live/source: https://msg-to-pdf-converter-cams.streamlit.app/
+- Role: Developer
+- Timeline: March 2024
+- Team: Solo Project
+- Technologies: Python, Outlook, WeasyPrint, Streamlit
+
+Batch converter for Outlook .MSG files to PDF. Processed 20,000+ financial emails with attachments.
+
+### Problem
+
+Compliance requires archiving emails as PDFs for audit trails. Outlook .MSG files aren't easily searchable or viewable without Outlook. Converting 20,000+ emails manually was impossible.
+
+### Solution
+
+Built a batch conversion tool that extracts MSG file contents (headers, body, attachments), renders them as formatted HTML, and converts to searchable PDFs. Handles complex scenarios like embedded images and nested attachments.
+
+### Impact
+
+- Processed 20,000+ emails
+- Preserved all formatting and attachments
+- 95% faster than manual conversion
+- Searchable PDF output
+
+### Key features
+
+- Batch .MSG file processing
+- HTML body rendering
+- Attachment extraction and embedding
+- Email header preservation
+- Inline image handling
+- Progress tracking for large batches
+- Error handling and logging
+- Zip download for batch results
+
+### Tech stack
+
+- frontend: Streamlit
+- backend: Python, extract-msg, WeasyPrint
+- processing: BeautifulSoup, Pillow
+- deployment: Streamlit Cloud
+
+### Learnings
+
+- Parsing Microsoft MSG file format
+- Rendering HTML to PDF with WeasyPrint
+- Handling various email encodings
+- Building robust batch processing pipelines
+
+---
+
+## PDF Footnotes Processor
+
+- URL: https://laxman824.github.io/projects/pdf-footnotes-processor
+- Live/source: https://pdf-proceappr-app-jxybczrguea2egjbmrk6yh.streamlit.app/
+- Role: Developer
+- Timeline: December 2023
+- Team: Solo Project
+- Technologies: OpenCV, OCR, PDF Processing, Streamlit
+
+Automated footnotes and reference mapping for academic documents with Excel export.
+
+### Problem
+
+Academic researchers spend hours manually extracting and organizing footnotes from PDF documents. Matching footnote numbers to their references across pages is tedious and error-prone.
+
+### Solution
+
+Built a tool that uses OCR and layout analysis to detect footnote regions, extract text, match footnote numbers to references, and export as a structured Excel spreadsheet with page numbers.
+
+### Impact
+
+- 90% time savings on footnote extraction
+- Accurate footnote-reference matching
+- Structured Excel output
+- Works with scanned PDFs
+
+### Key features
+
+- PDF text extraction with layout preservation
+- Footnote region detection using CV
+- Footnote number-reference matching
+- Multi-page reference tracking
+- Excel export with formatting
+- Scanned PDF support via OCR
+- Batch processing capability
+- Preview before export
+
+### Tech stack
+
+- frontend: Streamlit
+- backend: Python, PyMuPDF, pdfplumber
+- cv: OpenCV, Tesseract OCR
+- export: openpyxl, pandas
+
+### Learnings
+
+- PDF layout analysis techniques
+- Combining rule-based and ML approaches
+- Handling diverse PDF formats
+- Building academic research tools
+
+---
+
+## OCR Field Extraction
+
+- URL: https://laxman824.github.io/projects/ocr-field-extraction
+- Live/source: https://field-ocr-extraction-advanced.streamlit.app/
+- Role: Developer
+- Timeline: November 2023
+- Team: Solo Project
+- Technologies: OpenCV, DocTR, Python, Streamlit
+
+Automated extraction of PAN, Folio numbers from scanned documents using DocTR and custom post-processing.
+
+### Problem
+
+Financial services require extracting specific fields (PAN, Folio, Account numbers) from scanned documents. Traditional OCR gives raw text - identifying and extracting specific fields requires manual effort.
+
+### Solution
+
+Built a specialized OCR pipeline using DocTR for text detection and custom regex/AI post-processing to identify and extract specific financial identifiers with high accuracy.
+
+### Impact
+
+- 98% accuracy on PAN extraction
+- Processing 100+ documents/minute
+- Handles rotated and skewed images
+- JSON API for integration
+
+### Key features
+
+- Multi-format image support (JPG, PNG, TIFF, PDF)
+- PAN number detection and validation
+- Folio number extraction
+- Account number identification
+- Date extraction in multiple formats
+- Confidence scoring
+- Image preprocessing (deskew, denoise)
+- REST API endpoint
+
+### Tech stack
+
+- frontend: Streamlit
+- backend: Python, FastAPI
+- ocr: DocTR, Tesseract (fallback)
+- cv: OpenCV, Pillow, scikit-image
+
+### Learnings
+
+- DocTR vs Tesseract performance tradeoffs
+- Image preprocessing for better OCR
+- Validation rules for financial identifiers
+- Building production OCR APIs
+
+---
+
+## Stock Exchange Platform
+
+- URL: https://laxman824.github.io/projects/stock-exchange-platform
+- Live/source: https://github.com/Laxman824/CAMS-StockEx
+- Role: Full Stack Developer
+- Timeline: September 2023 - November 2023
+- Team: Solo Project
+- Technologies: Spring Boot, Java, REST API, Database
+
+Full-stack stock trading platform with Spring Boot backend, real-time prices, and portfolio management.
+
+### Problem
+
+Learning stock trading systems requires understanding order matching, portfolio management, and real-time data handling. Existing tutorials are superficial and don't cover production concerns.
+
+### Solution
+
+Built a complete stock exchange simulation with order book management, limit/market orders, portfolio tracking, and simulated price feeds. Demonstrates enterprise Java patterns and real-time data handling.
+
+### Impact
+
+- Complete trading simulation
+- Order matching engine implementation
+- Real-time portfolio valuation
+- Educational resource for learners
+
+### Key features
+
+- User registration and authentication
+- Stock listing and search
+- Market and limit order placement
+- Order book visualization
+- Trade execution and matching
+- Portfolio tracking with P&L
+- Historical transaction log
+- Price chart simulation
+
+### Tech stack
+
+- frontend: React, Chart.js, Bootstrap
+- backend: Spring Boot, Spring Security, JPA/Hibernate
+- database: PostgreSQL, H2 (testing)
+- tools: Maven, JUnit, Swagger
+
+### Learnings
+
+- Order matching engine algorithms
+- Spring Boot enterprise patterns
+- Database transaction management
+- Real-time data with WebSockets
+
+---
+
+## Driver Drowsiness Detection
+
+- URL: https://laxman824.github.io/projects/driver-drowsiness-detection
+- Live/source: https://github.com/Laxman824/Projects-Assignments/tree/main/Realtime%20driver%20drowsiness%20detection
+- Role: Developer
+- Timeline: August 2022 - November 2022
+- Team: IIT Delhi Project Team (3 members)
+- Technologies: OpenCV, dlib, Embedded C, Raspberry Pi
+
+Real-time embedded system for driver safety using Raspberry Pi with OpenCV and dlib.
+
+### Problem
+
+Drowsy driving causes 100,000+ accidents annually. Commercial solutions are expensive and not accessible. A low-cost, real-time detection system could save lives.
+
+### Solution
+
+Built an embedded system using Raspberry Pi and camera that detects eye closure patterns (Eye Aspect Ratio) and yawning using facial landmark detection. Triggers audio alerts when drowsiness is detected.
+
+### Impact
+
+- Real-time detection at 30 FPS
+- 95% accuracy in controlled conditions
+- Low-cost hardware (~$50)
+- Sub-second alert latency
+
+### Key features
+
+- Real-time face detection
+- 68-point facial landmark detection
+- Eye Aspect Ratio (EAR) calculation
+- Yawn detection via mouth aspect ratio
+- Configurable alert thresholds
+- Audio alarm system
+- Low-light mode with IR camera
+- Data logging for analysis
+
+### Tech stack
+
+- hardware: Raspberry Pi 4, Pi Camera, Speaker
+- software: Python, OpenCV, dlib, NumPy
+- algorithm: Facial Landmarks, EAR Algorithm, MAR Algorithm
+
+### Learnings
+
+- Real-time computer vision on embedded systems
+- Facial landmark detection with dlib
+- Optimizing OpenCV for Raspberry Pi
+- Building safety-critical systems
+
+---
+
+## RAVI - Visual Assistant
+
+- URL: https://laxman824.github.io/projects/ravi-visual-assistant
+- Live/source: https://github.com/Laxman824/RAVI-2022-2023-
+- Role: Software Engineer
+- Timeline: August 2022 - May 2024
+- Team: RAVI Team at IIT Delhi Assistech Lab
+- Technologies: Azure, JavaScript, Python, Docker
+
+AI-powered Reading Assistant for Visually Impaired using computer vision and automated image descriptions.
+
+### Problem
+
+Visually impaired students struggle to access STEM education because textbooks contain diagrams, charts, and equations that screen readers can't interpret. Manual description creation is slow and expensive.
+
+### Solution
+
+Built RAVI (Reading Assistant for Visually Impaired) - an AI system that automatically generates accurate descriptions for images in STEM documents, with crowdsourced verification for quality assurance.
+
+### Impact
+
+- Automated descriptions for STEM images
+- Crowdsourced verification workflow
+- Deployed at IIT Delhi Assistech Lab
+- Impacting 100+ visually impaired students
+
+### Key features
+
+- Automatic image description generation
+- STEM-specific vocabulary handling
+- Mathematical equation description
+- Crowdsourced verification portal
+- Audio output integration
+- PDF document processing
+- ALT text generation
+- Quality scoring system
+
+### Tech stack
+
+- frontend: JavaScript, HTML/CSS, Bootstrap
+- backend: Python, Flask, Azure Functions
+- ai: Azure Computer Vision, GPT-4, Custom models
+- cloud: Azure Blob Storage, Azure SQL, Docker
+
+### Learnings
+
+- Building accessible technology solutions
+- Azure Computer Vision APIs
+- Crowdsourcing for quality assurance
+- Working with visually impaired users
+
+---
+
+## Table Recognition System
+
+- URL: https://laxman824.github.io/projects/table-recognition-system
+- Live/source: https://github.com/Laxman824/MTP2-work
+- Role: Researcher
+- Timeline: January 2023 - May 2024 (M.Tech Thesis)
+- Team: Under Prof. Guidance at IIT Delhi
+- Technologies: Deep Learning, Python, MTL-Tabnet, PyTorch
+
+Deep learning system for borderless table detection and recognition in PDF documents.
+
+### Problem
+
+Tables in PDF documents, especially borderless tables, are difficult for screen readers to interpret. Existing table detection works only for bordered tables, leaving visually impaired users unable to access tabular data.
+
+### Solution
+
+Developed a deep learning model (MTL-TabNet architecture) that detects table regions, identifies rows and columns even without visible borders, and extracts structured data for accessibility tools.
+
+### Impact
+
+- 85% accuracy on borderless tables
+- Published research at IIT Delhi
+- Integrated into accessibility pipeline
+- Open-source contribution
+
+### Key features
+
+- Borderless table detection
+- Row and column segmentation
+- Cell content extraction
+- Multi-page table handling
+- Export to CSV/Excel
+- Integration with screen readers
+- Scanned document support
+- Table structure reconstruction
+
+### Tech stack
+
+- ml: PyTorch, MTL-TabNet, Transformers
+- cv: OpenCV, Detectron2
+- data: pandas, NumPy, scikit-learn
+- tools: Weights & Biases, Jupyter, LaTeX
+
+### Learnings
+
+- Training custom object detection models
+- Document layout analysis techniques
+- Academic research methodology
+- Accessibility in AI applications
+
+---
+
+## RAVI - Accessible STEM Education
+
+- URL: https://laxman824.github.io/projects/ravi-accessible-stem-education
+- Live/source: https://github.com/Laxman824/RAVI-2022-2023-
+- Role: Lead Developer
+- Timeline: August 2022 - May 2024
+- Team: RAVI Team (5 members)
+- Technologies: Python, Flask, HTML, Machine Learning, Computer Vision
+
+AI-powered accessibility tool for STEM documents enabling visually impaired students to access scientific content.
+
+### Problem
+
+STEM education relies heavily on visual content - graphs, diagrams, chemical structures. Visually impaired students miss critical learning because these images lack proper descriptions.
+
+### Solution
+
+Extended RAVI with STEM-specific capabilities: chemical structure recognition, graph interpretation, equation rendering, and context-aware descriptions that explain WHY an image is important, not just WHAT it shows.
+
+### Impact
+
+- Supporting 100+ students at IIT Delhi
+- Partnership with Assistech Lab
+- Recognition from accessibility community
+- Open-source toolkit release
+
+### Key features
+
+- Chemical structure recognition
+- Graph and chart interpretation
+- Mathematical equation audio rendering
+- Context-aware descriptions
+- Learning material organization
+- Student progress tracking
+- Teacher annotation tools
+- Multi-language support
+
+### Tech stack
+
+- frontend: HTML/CSS, JavaScript, Bootstrap
+- backend: Python, Flask, SQLAlchemy
+- ai: TensorFlow, ChemBERTa, GPT-4
+- accessibility: ARIA, Screen Reader APIs
+
+### Learnings
+
+- Domain-specific AI applications
+- Accessibility-first design thinking
+- Collaboration with end-users
+- Impact measurement in social projects
+
+---
+
+## SkyLine Airlines - DBMS System
+
+- URL: https://laxman824.github.io/projects/skyline-airlines-dbms
+- Live/source: https://github.com/Laxman824/Dbms-Project
+- Role: Developer
+- Timeline: September 2021 - December 2021
+- Team: DBMS Course Project (2 members)
+- Technologies: Flask, PostgreSQL, HTML/CSS, SQL
+
+Airline reservation system with Flask and PostgreSQL featuring advanced SQL queries and booking management.
+
+### Problem
+
+Database management course project requiring demonstration of advanced SQL concepts: complex joins, triggers, stored procedures, and transaction management in a real-world application.
+
+### Solution
+
+Built a complete airline reservation system showcasing: flight search with multi-stop routing, seat inventory with overbooking, dynamic pricing, loyalty program, and comprehensive admin reporting.
+
+### Impact
+
+- Comprehensive DBMS demonstration
+- Complex SQL query optimization
+- Transaction management implementation
+- Top grade in DBMS course
+
+### Key features
+
+- User registration with hashed passwords
+- Flight search with filters
+- Multi-city routing algorithm
+- Seat selection with class options
+- Dynamic pricing based on demand
+- Booking confirmation and e-tickets
+- Loyalty points system
+- Admin reports and analytics
+
+### Tech stack
+
+- frontend: HTML, CSS, Jinja2, Bootstrap
+- backend: Python, Flask, SQLAlchemy
+- database: PostgreSQL, Stored Procedures, Triggers
+- tools: pgAdmin, Postman
+
+### Learnings
+
+- Advanced SQL query optimization
+- Database normalization principles
+- Transaction ACID properties
+- Building database triggers and procedures
+
+---
+
+## BitTorrent File Transfer
+
+- URL: https://laxman824.github.io/projects/bittorrent-file-transfer
+- Live/source: https://github.com/Laxman824/Projects-Assignments/tree/main/BitTorrent-technique
+- Role: Developer
+- Timeline: March 2021
+- Team: Networks Course Assignment
+- Technologies: Python, Networking, TCP/IP, P2P
+
+Implementation of BitTorrent P2P protocol with parallel TCP connections for distributed file sharing.
+
+### Problem
+
+Understanding distributed systems requires hands-on implementation. BitTorrent's peer-to-peer architecture is an excellent case study for parallel downloads, chunk verification, and distributed coordination.
+
+### Solution
+
+Implemented core BitTorrent concepts: torrent file parsing, tracker communication, peer discovery, parallel chunk downloading from multiple peers, SHA1 verification, and file reconstruction.
+
+### Impact
+
+- Working P2P file transfer
+- 4x faster than sequential download
+- Demonstrates distributed systems concepts
+- Educational resource for networking
+
+### Key features
+
+- Torrent file (.torrent) parsing
+- Tracker HTTP announce protocol
+- Peer discovery and handshake
+- Parallel downloads from multiple peers
+- Piece selection algorithms (rarest first)
+- SHA1 hash verification
+- File reconstruction from chunks
+- Progress tracking and resumption
+
+### Tech stack
+
+- language: Python 3
+- networking: socket, asyncio, aiohttp
+- crypto: hashlib (SHA1)
+- encoding: bencodepy
+
+### Learnings
+
+- TCP socket programming in Python
+- Binary protocol implementation
+- Asynchronous I/O with asyncio
+- Distributed systems coordination
+
+---
+
+## AmudalaKunta - Payment Gateway
+
+- URL: https://laxman824.github.io/projects/amudalakunta-payment-gateway
+- Live/source: https://laxman824.github.io/AmudalaKunta/
+- Role: Developer & Initiator
+- Timeline: December 2020
+- Team: Solo Project for Village
+- Technologies: HTML/CSS, JavaScript, Payment Gateway, Dashboard
+
+Live web application with integrated payment gateway and admin dashboard for village development fund.
+
+### Problem
+
+My native village lacked a transparent system for collecting and tracking development fund contributions. Manual tracking was error-prone and lacked trust.
+
+### Solution
+
+Built a website for the village with Razorpay payment integration, contribution tracking, donor recognition, and an admin dashboard for fund management and transparency.
+
+### Impact
+
+- ₹2L+ contributions collected
+- 100% transparent tracking
+- Digital payment adoption in village
+- Community trust building
+
+### Key features
+
+- Village information and updates
+- Secure payment gateway (Razorpay)
+- Contribution tracking
+- Donor wall with recognition tiers
+- Admin dashboard for management
+- Receipt generation
+- Fund utilization reports
+- Mobile-responsive design
+
+### Tech stack
+
+- frontend: HTML5, CSS3, JavaScript, Bootstrap
+- payment: Razorpay
+- hosting: GitHub Pages
+- tools: Google Sheets (backend), EmailJS
+
+### Learnings
+
+- Payment gateway integration
+- Building for real users
+- Simple backends with Google Sheets
+- Community-driven development
+
+---
+
+## AI Pacman - Multi-Agent Search
+
+- URL: https://laxman824.github.io/projects/ai-pacman-multi-agent-search
+- Live/source: https://github.com/Laxman824/Projects-Assignments/tree/main/AI-Pacman%20heuristics
+- Role: Developer
+- Timeline: October 2020
+- Team: AI Course Assignment
+- Technologies: Python, AI/ML, Algorithms, Game AI
+
+Advanced AI for Pacman featuring DFS, BFS, A*, and minimax with alpha-beta pruning.
+
+### Problem
+
+UC Berkeley's AI course project: implement various search algorithms and adversarial agents for Pacman, demonstrating understanding of AI fundamentals.
+
+### Solution
+
+Implemented complete suite: uninformed search (DFS, BFS), informed search (A*, Greedy), adversarial search (Minimax, Alpha-Beta, Expectimax), and custom evaluation functions.
+
+### Impact
+
+- Full score on all autograder tests
+- Optimal pathfinding implementation
+- Multi-ghost adversarial handling
+- Top performance in class
+
+### Key features
+
+- Depth-First Search (DFS)
+- Breadth-First Search (BFS)
+- Uniform Cost Search
+- A* with heuristics
+- Minimax adversarial search
+- Alpha-Beta pruning optimization
+- Expectimax for stochastic agents
+- Custom evaluation functions
+
+### Tech stack
+
+- language: Python
+- concepts: Graph Search, Game Theory, Heuristics
+- framework: UC Berkeley Pacman
+
+### Learnings
+
+- Search algorithm implementations
+- Game tree evaluation
+- Heuristic design for A*
+- Alpha-beta pruning optimization
+
+---
+
+## VM Snapshot System
+
+- URL: https://laxman824.github.io/projects/vm-snapshot-system
+- Live/source: https://github.com/Laxman824/LiveSnapshotProject
+- Role: Backend & Systems Developer
+- Timeline: April 2023
+- Team: Cloud Computing Project (2 members)
+- Technologies: Rust, Virtualization, HTML, CSS
+
+KVM-based VM snapshot service built with Rust. Features live snapshotting, incremental backups, and a web interface for VM state management.
+
+### Problem
+
+Cloud Computing course project: design and implement a reliable VM snapshotting service on top of a hypervisor stack. Needed to interact with KVM/libvirt, preserve VM state, and expose a usable management interface.
+
+### Solution
+
+Implemented a Rust-based snapshot service that talks to KVM/libvirt to create and manage live snapshots of running VMs, with a lightweight web UI for creating, listing, and restoring snapshots without manual hypervisor commands.
+
+### Impact
+
+- Enabled live snapshotting with minimal or no VM downtime.
+- Introduced incremental snapshots to reduce storage footprint for frequent backups.
+- Provided a simple web panel for operators instead of low-level CLI or hypervisor tools.
+- Demonstrated safe systems programming in Rust for critical infrastructure workflows.
+
+### Key features
+
+- Live VM snapshotting while the guest OS keeps running.
+- Full memory and disk state capture for consistent restore points.
+- Incremental snapshot support to optimize storage usage.
+- Snapshot listing, filtering, and metadata display in the UI.
+- One-click snapshot restore from the web interface.
+- Basic snapshot scheduling for periodic backups.
+- Support for multiple VMs configured via libvirt domains.
+- Storage space monitoring and simple retention strategy.
+
+### Tech stack
+
+- backend: Rust, libvirt-rs, actix-web
+- virtualization: KVM, QEMU, libvirt
+- frontend: HTML, CSS, JavaScript
+- storage: QCOW2, LVM
+
+### Learnings
+
+- Hands-on experience with KVM, QEMU, and libvirt APIs.
+- Systems programming in Rust with focus on safety and error handling.
+- Design of snapshot models including full and incremental backups.
+- Practical understanding of VM storage backends and performance trade-offs.
+
+---
+
+## Smart Lift Controller System
+
+- URL: https://laxman824.github.io/projects/smart-lift-controller
+- Live/source: https://github.com/Laxman824/COL215-COMP-ARCH-assignments
+- Role: Developer
+- Timeline: November 2020
+- Team: Computer Architecture Lab (2 members)
+- Technologies: Verilog, Logic Design, Simulation, Algorithms
+
+Intelligent elevator control system in Verilog with optimized scheduling for multi-floor buildings.
+
+### Problem
+
+Computer Architecture lab: design a digital system using Verilog. Elevator controller chosen for its state machine complexity and real-world applicability.
+
+### Solution
+
+Designed a 3-floor elevator controller with optimized scheduling (SCAN algorithm), direction priority, door timing, emergency stop, and LED/seven-segment display output.
+
+### Impact
+
+- Efficient SCAN scheduling algorithm
+- Minimal wait time optimization
+- Complete state machine implementation
+- Synthesizable on FPGA
+
+### Key features
+
+- 3-floor elevator simulation
+- SCAN scheduling algorithm
+- Direction priority handling
+- Door open/close timing
+- Emergency stop functionality
+- Floor indicator display
+- Request queue management
+- Overload detection
+
+### Tech stack
+
+- hdl: Verilog
+- simulation: ModelSim, Vivado
+- fpga: Xilinx Artix-7
+- tools: GTKWave
+
+### Learnings
+
+- Finite State Machine design
+- Verilog HDL programming
+- Digital logic optimization
+- FPGA synthesis constraints

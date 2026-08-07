@@ -8,5 +8,64 @@ Allow: /
 Disallow: /admin
 Disallow: /jobhunt
 
-# Sitemap location
+# ----------------------------------------------------------------
+# AI / LLM crawlers — explicitly welcome. Every project has its own
+# prerendered page at /projects/<slug>, and llms.txt below is a
+# machine-readable index of the whole portfolio.
+# ----------------------------------------------------------------
+User-agent: GPTBot
+Allow: /
+Disallow: /admin
+Disallow: /jobhunt
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /admin
+Disallow: /jobhunt
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin
+Disallow: /jobhunt
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+Disallow: /admin
+Disallow: /jobhunt
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+# Sitemap location (generated at build time by scripts/prerender.js)
 Sitemap: https://laxman824.github.io/sitemap.xml
+
+# Machine-readable portfolio summary for LLMs:
+#   https://laxman824.github.io/llms.txt       — concise index
+#   https://laxman824.github.io/llms-full.txt  — every project in full
