@@ -191,65 +191,6 @@ Engineered a Multi-Agent Orchestration Framework using LangGraph to handle the f
 
 ---
 
-## Dialogflow CX Virtual Agent — Financial Services Chatbot & Voicebot (GCP / CCAI)
-
-- URL: https://laxman824.github.io/projects/dialogflow-cx-virtual-agent
-- Live/source: https://cloud.google.com/dialogflow/cx/docs
-- Role: AI Engineer
-- Timeline: 2025
-- Team: Solo Developer
-- Technologies: Dialogflow CX, CCAI Telephony, Vertex AI, Gemini 2.5 Flash, Python, IaC
-
-Built and launched a production-style Dialogflow CX virtual agent for banking/financial services on GCP, covering 6+ customer intents (account statements, balance, transaction history, fund transfer, bill payment, contact updates). Shipped as both a chatbot and an inbound-telephony voicebot via CCAI, provisioned end-to-end as Python Infrastructure-as-Code instead of manual console configuration.
-
-### Problem
-
-Banking/financial-services support for account statements, balances, transaction history, fund transfers, bill payments, and contact updates was handled manually or through rigid IVR trees, with no reusable, reproducible way to provision and redeploy the same conversational logic across chat and voice channels.
-
-### Solution
-
-Designed the complete Dialogflow CX conversation graph — intents → entity types → flows → pages → form parameters → routes — with fuzzy entity extraction and multi-turn slot-filling, provisioned entirely as Python Infrastructure-as-Code on the Dialogflow CX SDK. Shipped the same agent as a voicebot for inbound telephony with natural Indian-English (en-IN) Neural2 speech, barge-in, and spell correction, wiring the CCAI Telephony integration so one virtual agent serves both chat and voice callers.
-
-### Impact
-
-- Reduced agent build/redeploy time from days to a single command
-- One virtual agent serves both chat and voice (CCAI Telephony) callers
-- Idempotent, reproducible provisioning across environments (no manual console clicks)
-- Quantified deterministic-NLU vs. generative trade-offs for solution-architecture recommendations
-
-### Key features
-
-- 6+ customer intents: account statements, balance, transaction history, fund transfer, bill payment, contact updates
-- Full conversation graph: intents, entity types, flows, pages, form parameters, routes
-- Fuzzy entity extraction and multi-turn slot-filling
-- en-IN Neural2 voice with barge-in, spell correction, and Cloud logging
-- CCAI Telephony integration for inbound calls
-- Idempotent Python provisioning scripts (entities, intents, flows, pages, routes) via the Dialogflow CX API
-- Prototyped Vertex AI Gemini 2.5 Flash generative alternative: LLM intent classification, session memory, parameter validation
-
-### Tech stack
-
-- conversationalAI: Dialogflow CX, CCAI Telephony
-- ai: Vertex AI, Gemini 2.5 Flash
-- backend: Python, Dialogflow CX SDK
-- cloud: Google Cloud Platform, Cloud Logging
-
-### Architecture highlights
-
-- Conversation graph: intents → entity types → flows → pages → form parameters → routes
-- Single agent, dual channel: chat + CCAI Telephony voicebot
-- Python IaC provisioning scripts for entities, intents, flows, pages, and routes via the Dialogflow CX API
-- Generative alternative prototyped on Vertex AI Gemini 2.5 Flash for intent classification, session memory, and parameter validation
-
-### Learnings
-
-- Modeling multi-turn banking conversations as a flows/pages/routes state graph with slot-filling
-- Trade-offs between deterministic NLU (Dialogflow CX) and generative LLM-driven intent classification
-- Provisioning conversational AI infrastructure as reproducible, idempotent code rather than console clicks
-- Tuning telephony-specific speech settings (en-IN Neural2, barge-in, spell correction) for a natural voicebot experience
-
----
-
 ## OpsPilot — Agentic Request Triage & Remediation System
 
 - URL: https://laxman824.github.io/projects/opspilot
@@ -625,6 +566,65 @@ Built an autonomous multi-agent system where specialized AI agents (Receptionist
 - Handling agent failures and fallbacks gracefully
 - Balancing autonomy with human oversight
 - Optimizing token usage across multiple agents
+
+---
+
+## Dialogflow CX Virtual Agent — Financial Services Chatbot & Voicebot (GCP / CCAI)
+
+- URL: https://laxman824.github.io/projects/dialogflow-cx-virtual-agent
+- Live/source: https://cloud.google.com/dialogflow/cx/docs
+- Role: AI Engineer
+- Timeline: 2025
+- Team: Solo Developer
+- Technologies: Dialogflow CX, CCAI Telephony, Vertex AI, Gemini 2.5 Flash, Python, IaC
+
+Built and launched a production-style Dialogflow CX virtual agent for banking/financial services on GCP, covering 6+ customer intents (account statements, balance, transaction history, fund transfer, bill payment, contact updates). Shipped as both a chatbot and an inbound-telephony voicebot via CCAI, provisioned end-to-end as Python Infrastructure-as-Code instead of manual console configuration.
+
+### Problem
+
+Banking/financial-services support for account statements, balances, transaction history, fund transfers, bill payments, and contact updates was handled manually or through rigid IVR trees, with no reusable, reproducible way to provision and redeploy the same conversational logic across chat and voice channels.
+
+### Solution
+
+Designed the complete Dialogflow CX conversation graph — intents → entity types → flows → pages → form parameters → routes — with fuzzy entity extraction and multi-turn slot-filling, provisioned entirely as Python Infrastructure-as-Code on the Dialogflow CX SDK. Shipped the same agent as a voicebot for inbound telephony with natural Indian-English (en-IN) Neural2 speech, barge-in, and spell correction, wiring the CCAI Telephony integration so one virtual agent serves both chat and voice callers.
+
+### Impact
+
+- Reduced agent build/redeploy time from days to a single command
+- One virtual agent serves both chat and voice (CCAI Telephony) callers
+- Idempotent, reproducible provisioning across environments (no manual console clicks)
+- Quantified deterministic-NLU vs. generative trade-offs for solution-architecture recommendations
+
+### Key features
+
+- 6+ customer intents: account statements, balance, transaction history, fund transfer, bill payment, contact updates
+- Full conversation graph: intents, entity types, flows, pages, form parameters, routes
+- Fuzzy entity extraction and multi-turn slot-filling
+- en-IN Neural2 voice with barge-in, spell correction, and Cloud logging
+- CCAI Telephony integration for inbound calls
+- Idempotent Python provisioning scripts (entities, intents, flows, pages, routes) via the Dialogflow CX API
+- Prototyped Vertex AI Gemini 2.5 Flash generative alternative: LLM intent classification, session memory, parameter validation
+
+### Tech stack
+
+- conversationalAI: Dialogflow CX, CCAI Telephony
+- ai: Vertex AI, Gemini 2.5 Flash
+- backend: Python, Dialogflow CX SDK
+- cloud: Google Cloud Platform, Cloud Logging
+
+### Architecture highlights
+
+- Conversation graph: intents → entity types → flows → pages → form parameters → routes
+- Single agent, dual channel: chat + CCAI Telephony voicebot
+- Python IaC provisioning scripts for entities, intents, flows, pages, and routes via the Dialogflow CX API
+- Generative alternative prototyped on Vertex AI Gemini 2.5 Flash for intent classification, session memory, and parameter validation
+
+### Learnings
+
+- Modeling multi-turn banking conversations as a flows/pages/routes state graph with slot-filling
+- Trade-offs between deterministic NLU (Dialogflow CX) and generative LLM-driven intent classification
+- Provisioning conversational AI infrastructure as reproducible, idempotent code rather than console clicks
+- Tuning telephony-specific speech settings (en-IN Neural2, barge-in, spell correction) for a natural voicebot experience
 
 ---
 
