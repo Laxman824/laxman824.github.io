@@ -49,6 +49,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://laxman824.github.io/jarvis</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://laxman824.github.io/projects/cams-lens</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>

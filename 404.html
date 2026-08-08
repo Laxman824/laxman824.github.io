@@ -4,11 +4,12 @@
 <head>
     <script>
         // SPA fallback: a /blog/<slug> published after the last deploy has no
-        // prerendered file yet — bounce to the app via the ?p= convention
-        // that index.html's redirect handler already understands.
+        // prerendered file yet, and /jarvis is a client-only route — bounce
+        // both to the app via the ?p= convention that index.html's redirect
+        // handler already understands.
         (function () {
             var p = location.pathname;
-            if (/^\/blog\/.+/.test(p)) {
+            if (/^\/(blog\/.+|jarvis)/.test(p)) {
                 location.replace("/?p=" + p);
             }
         })();
