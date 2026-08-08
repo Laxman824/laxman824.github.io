@@ -80,6 +80,7 @@ Deployed a SEBI-grounded Retrieval-Augmented Generation (RAG) system enabling co
 
 - URL: https://laxman824.github.io/projects/camscode
 - Live/source: https://drive.google.com/file/d/1PTXG45x_DptJQvzL3Nozgnn_fGjLXl71/view?usp=drivesdk
+- Interactive demo: https://laxman824.github.io/jarvis — CAMSCode can't leave the CAMS network. Jarvis is the same agent architecture, open source and running live — ask it about its own code.
 - Role: AI Engineer & Solo Developer
 - Timeline: 2026
 - Team: Independently designed, built, and deployed within CAMS infrastructure
