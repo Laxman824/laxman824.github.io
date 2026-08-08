@@ -1,4 +1,4 @@
-# K Laxman — all 26 projects in full
+# K Laxman — all 27 projects in full
 
 > Senior AI Engineer at Think360 AI (CAMS) and IIT Delhi graduate (M.Tech & B.Tech, Computer Science). Builds production Generative AI systems end to end: LLM-powered applications, Retrieval-Augmented Generation (RAG) pipelines, multi-agent orchestration, and full-stack products with React, Python and cloud infrastructure.
 
@@ -251,6 +251,66 @@ Built a custom, framework-free ~140-line agent loop (no LangChain/AutoGPT) with 
 
 ---
 
+## Agentic Research & Decision Intelligence Assistant
+
+- URL: https://laxman824.github.io/projects/research-intelligence-agent
+- Live/source: https://researchagent-langchain-reasoning.streamlit.app/
+- Role: AI Engineer & Solo Developer
+- Timeline: 2026
+- Team: Solo Developer
+- Technologies: LangGraph, Gemini 2.5, Python, Streamlit, FastAPI, SQLite
+
+Developed a LangGraph-powered multi-step research and decision-support system that decomposes complex queries into research dimensions, gathers external evidence with deterministic fallback and circuit breaking, validates findings, and escalates low-confidence runs to human review before synthesizing structured recommendations.
+
+### Problem
+
+Open-ended market and technical queries require multi-faceted investigation, gathering evidence across diverse sources, detecting conflicting data, and generating reliable, structured decision support without hallucinating confidence or getting stuck in endless search loops.
+
+### Solution
+
+Built a stateful multi-step agent system using LangGraph with 100% deterministic graph edges for control flow. The graph executes 6 stages: classify_and_plan (Planner LLM decomposes query into orthogonal dimensions), plan_gate (deterministic clamp and deduplication), research_dimension (Research LLM with tool execution loop), validate (deterministic conflict, coverage, and confidence scoring), human_review (interrupt/resume gate for low-confidence or conflicting runs), and synthesize (Synthesis LLM producing structured multi-part projections). State is persisted step-by-step using SQLite SqliteSaver for seamless human-in-the-loop workflows.
+
+### Impact
+
+- Deterministic control flow edges and bounded tool loops guarantee 100% execution termination with zero risk of infinite LLM search loops
+- Deterministic validation layer removes LLM hallucination from confidence scoring, conflict detection, and human escalation decisions
+- SQLite-backed tool caching (24h TTL) and per-tool circuit breakers (3 consecutive failures → OPEN) ensure system resilience under severe API rate limits and source downtime
+- LangGraph SqliteSaver checkpointing enables pause, human guidance, and resume capabilities across process restarts via thread_id
+
+### Key features
+
+- Planner Agent decomposes complex NL questions into 3–6 orthogonal investigation dimensions with strict JSON schema outputs
+- Research Agent executes sequentially over a 5-tool registry (DuckDuckGo, Wikipedia, HackerNews Algolia, arXiv, GitHub REST) with exponential backoff and circuit breaking
+- Deterministic Validator scores runs using a weighted confidence formula (45% finding conf, 35% coverage, 20% conflict ratio)
+- Confidence-gated Human Review trigger (escalates if confidence < 0.70, conflicts > 0, or degraded dimensions ≥ 2) with interrupt and resume state mechanics
+- Synthesis Agent aggregates validated evidence into structured FinalReport projections (Part 1: Findings, Part 2: Recommendation, Part 3: Validation)
+- Tool Executor layer features 24h TTL SQLite caching, in-run deduplication, tenacity retry logic with backoff + jitter, and 10s execution timeouts
+- Client-side token-bucket rate limiter (8 RPM) strictly prevents 429 quota errors under Gemini free-tier limits
+- Dual UI/API availability: Interactive Streamlit interface streaming internal execution traces alongside a FastAPI backend
+
+### Tech stack
+
+- ai: LangGraph, Gemini 2.5 Flash, google-genai (structured output)
+- backend: Python 3.12, FastAPI, Streamlit, Tenacity
+- data: SQLite (SqliteSaver & Tool Cache), Pydantic v2
+- viz: Mermaid.js, Streamlit UI
+
+### Architecture highlights
+
+- 100% deterministic graph routing: classify_and_plan → plan_gate → research_dimension* → validate → [human_review] → synthesize
+- Clear separation of concerns: Semantic judgment delegated to LLMs, while control flow, validation math, and escalation thresholds remain token-free and reproducible
+- Resilient ToolExecutor wrapper that never raises unhandled exceptions—errors degrade findings into data that feed the confidence scoring engine
+- Full thread-level SQLite checkpointing allowing seamless execution pause on `interrupt()` and resume on human feedback
+
+### Learnings
+
+- Restricting LLMs strictly to semantic tasks (planning, extraction, synthesis) while using deterministic code for control flow and validation math dramatically improves system reliability
+- Implementing tool-level circuit breakers and local caching prevents external API downtime from cascading into full pipeline failure
+- Stateful graph checkpointing (SqliteSaver) is essential for production human-in-the-loop applications, allowing tasks to pause and resume without losing context
+- Counter-bounding loop conditions (max tool calls per dimension, capped review loops) guarantees deterministic execution termination and cost predictability
+
+---
+
 ## NexGenGaming - E-Commerce Platform
 
 - URL: https://laxman824.github.io/projects/nexgengaming-ecommerce
@@ -357,56 +417,61 @@ Built an intelligent booking platform with AI-powered natural language booking (
 
 ---
 
-## SEBI Debarred PAN Extraction
+## SEBI Debarred Entities Extraction — Regulatory Document Intelligence
 
 - URL: https://laxman824.github.io/projects/sebi-debarred-pan-extraction
 - Live/source: https://github.com/Laxman824/
-- Role: Backend Developer
+- Role: Backend Developer & AI Engineer
 - Timeline: August 2024 - October 2024
 - Team: Solo + Compliance Team Review
-- Technologies: Python, Google Cloud, Vertex AI, Firestore, Pub/Sub, Docker
+- Technologies: Gemini 2.5, FAISS, Python, Google Cloud, Pub/Sub, Firestore, Docker
 
-Cloud-native backend monitoring SEBI regulatory orders, extracting debarred PAN details using AI-powered document parsing.
+Cloud-native event-driven RAG backend monitoring SEBI regulatory orders, routing multimodal PDFs via Camelot or Gemini Vision, scoring page relevance with FAISS, and extracting structured debarred PAN records using schema-constrained Gemini 2.5 Flash.
 
 ### Problem
 
-SEBI regularly publishes orders debarring individuals from securities markets. Compliance teams manually read 100+ page PDF orders to extract PAN numbers of debarred entities - a time-consuming, error-prone process critical for KYC compliance.
+SEBI regularly publishes legal PDF orders debarring entities from securities markets. Compliance teams manually reviewed hundreds of pages per PDF to identify debarred individuals and extract PAN details—an expensive, error-prone process critical for KYC compliance.
 
 ### Solution
 
-Built an automated pipeline that monitors SEBI website for new orders, downloads PDFs, uses AI (Gemini) to extract PAN numbers and debarment details, and stores structured data in Firestore. Event-driven architecture ensures real-time processing.
+Built an event-driven RAG pipeline on GCP (Pub/Sub, Cloud Run, GKE, Firestore) that automatically ingests regulatory PDFs. The system routes documents based on type (Camelot for text-native vs. Gemini Vision for scanned OCR), scores page relevance using FAISS vector search on SEBI-specific document patterns, and passes only highly relevant context into Gemini 2.5 Flash with schema enforcement for 100% structured PAN extraction.
 
 ### Impact
 
-- 100% automation of PAN extraction
-- Processing orders within minutes of publication
-- Zero manual intervention required
-- Structured compliance database
+- 50% reduction in manual compliance review time across regulatory teams
+- 6,000+ SEBI orders automatically evaluated and indexed in Firestore
+- 10 concurrent PDF extractions handled simultaneously via Pub/Sub queue
+- 100% schema-constrained structured outputs (PAN, entity name, debarment period) extracted with zero hallucination
 
 ### Key features
 
-- Automated SEBI website monitoring
-- PDF download and text extraction
-- AI-powered PAN number detection
-- Debarment period extraction
-- Duplicate detection and deduplication
-- Real-time Pub/Sub event processing
-- Firestore database with search
-- Alert notifications for new orders
+- Automated SEBI regulatory order ingestion and deduplication
+- Multimodal document router (Camelot for native text vs. Gemini Vision for scanned OCR)
+- FAISS vector similarity scoring to isolate relevant debarment pages and prune legal boilerplate
+- Schema-constrained Gemini 2.5 Flash extraction for PAN numbers, entity names, and durations
+- Event-driven GCP architecture using Pub/Sub, Cloud Run, and GKE with autoscaling
+- Searchable Firestore database for instant downstream KYC watchlist matching
 
 ### Tech stack
 
-- backend: Python, FastAPI, BeautifulSoup, PyPDF2
-- ai: Vertex AI, Gemini Pro, Document AI
-- cloud: Cloud Run, Pub/Sub, Cloud Scheduler, Firestore
+- backend: Python, FastAPI, Camelot, PyPDF2
+- ai: Gemini 2.5 Flash, Gemini Vision, FAISS, Document AI
+- cloud: Cloud Run, Pub/Sub, Cloud Scheduler, Firestore, GKE
 - tools: Docker, Cloud Build, Secret Manager
+
+### Architecture highlights
+
+- 5-stage event-driven pipeline: Ingest (Pub/Sub) → Route (Decision) → Parse (Camelot / Gemini Vision) → Score (FAISS) → Extract & Save (Gemini 2.5 Flash → Firestore)
+- FAISS vector store isolates debarment-relevant pages, pruning irrelevant legal boilerplates before LLM invocation
+- Fail-safe fallback: Scanned or damaged PDFs automatically redirect to Gemini Vision OCR when native text extraction returns low confidence
+- Schema enforcement guarantees structured entity records formatted specifically for instant KYC matching
 
 ### Learnings
 
-- Building event-driven architectures on GCP
-- Combining regex and AI for robust extraction
-- Handling unstructured PDF documents at scale
-- Designing for regulatory compliance requirements
+- Filtering multi-page PDFs using FAISS vector page scoring before passing context to LLMs drastically reduces token consumption and response latency
+- Routing documents early (Camelot for text vs. Gemini Vision for scanned OCR) preserves extraction accuracy while keeping costs optimal
+- Enforcing strict JSON schema constraints on Gemini calls prevents formatting hallucinations in downstream compliance databases
+- Decoupling PDF intake and parsing via GCP Pub/Sub ensures high concurrency without worker memory crashes
 
 ---
 
