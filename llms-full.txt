@@ -15,7 +15,7 @@ Source: https://laxman824.github.io/projects · Concise index: https://laxman824
 - Team: Independently built core AI, backend, and deployment infrastructure
 - Technologies: RAG, Google Cloud, Vertex AI, Cloud Run, AlloyDB, BigQuery, Python, AI/ML
 
-Productionized an enterprise-grade GenAI compliance platform leveraging RAG over 80,000+ SEBI and financial regulatory documents. Achieved 95% retrieval precision with sub-7-second response latency, delivering audit-ready, citation-backed outputs in regulated financial environments. The system auto-ingests new files without human intervention and scales automatically with growing regulatory updates.
+Productionized an enterprise-grade GenAI compliance platform leveraging RAG over 80,000+ SEBI and financial regulatory documents. Achieved 95% retrieval precision with sub-7-second response latency, delivering audit-ready, citation-backed outputs in regulated financial environments. The system auto-ingests new files without human intervention and scales automatically with growing regulatory updates.Expanded the platform’s core utility by developing an automated workflow module that translates regulatory insights into structured, time-bound actionables and directly assigns them for execution within AMC operational systems.
 
 ### Problem
 
