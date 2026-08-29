@@ -42,7 +42,7 @@
 
 An opinionated roadmap for learning AI, ML and agentic AI engineering, written by K Laxman.
 The ordering is the point: LLM fundamentals -> RAG -> Agent loops -> Tools / MCP -> Evals + tracing -> Production architecture -> System design.
-19 stages, ~57 hours of study plus the builds.
+24 stages, ~57 hours of study plus the builds.
 
 ### AI — Understand the model, then ground it in your own data (21h)
 https://laxman824.github.io/learn/ai
