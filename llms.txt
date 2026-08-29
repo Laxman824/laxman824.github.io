@@ -38,12 +38,46 @@
 - [VM Snapshot System](https://laxman824.github.io/projects/vm-snapshot-system): KVM-based VM snapshot service built with Rust. Features live snapshotting, incremental backups, and a web interface for VM state management. Tech: Rust, Virtualization, HTML, CSS.
 - [Smart Lift Controller System](https://laxman824.github.io/projects/smart-lift-controller): Intelligent elevator control system in Verilog with optimized scheduling for multi-floor buildings. Tech: Verilog, Logic Design, Simulation, Algorithms.
 
+## Learning path
+
+An opinionated roadmap for learning AI, ML and agentic AI engineering, written by K Laxman.
+The ordering is the point: LLM fundamentals -> RAG -> Agent loops -> Tools / MCP -> Evals + tracing -> Production architecture -> System design.
+19 stages, ~57 hours of study plus the builds.
+
+### AI — Understand the model, then ground it in your own data (21h)
+https://laxman824.github.io/learn/ai
+For: You want to build products on top of LLMs.
+The most common job going, and the one with the widest gap between a demo and something you would put in front of a customer. Understand what the model actually is, then learn to feed it your data without it inventing things.
+
+- [LLM fundamentals](https://laxman824.github.io/learn/llms): Understand the thing everything else sits on. ~6h. If you only ever do one item on this page, do the first one. Almost every confused conversation I have about AI systems traces back to someone never having watched this.
+- [Retrieval-Augmented Generation](https://laxman824.github.io/learn/rag): The part most people do badly. ~10h. Everyone can build a RAG demo in an afternoon. Almost nobody can tell you why theirs returns the wrong chunk. The difference between those two people is this track — and the eval set at the end of it.
+- [Evals, tracing & observability](https://laxman824.github.io/learn/evals): The stage everyone skips. ~5h. This is the one that separates a demo from a product. As a system gets complicated, evals and tracing stop being nice-to-have and become the only way you can change anything without breaking it. If…
+
+### ML — The classical craft — rows, columns, and not fooling yourself (15h)
+https://laxman824.github.io/learn/ml
+For: Your data lives in a database, not in documents.
+Quieter than the AI headlines and still what most companies actually need. A table, a column you want to predict, and the discipline to know whether it worked. Boosted trees have not stopped winning just because language models arrived.
+
+- [Classic ML](https://laxman824.github.io/learn/ml-core): Still what wins on the data most companies actually have. ~10h. The half of the job the AI headlines skipped, and the half that quietly pays for most ML salaries: a table of rows, a column you want to predict, and the discipline not to fool yourself about how…
+- [Evals, tracing & observability](https://laxman824.github.io/learn/evals): The stage everyone skips. ~5h. This is the one that separates a demo from a product. As a system gets complicated, evals and tracing stop being nice-to-have and become the only way you can change anything without breaking it. If…
+
+### Agentic AI Engineering — A model, in a loop, with tools — and everything that keeps it up (25h)
+https://laxman824.github.io/learn/agentic
+For: You want the thing to do the work, not just answer.
+Where I spend my own time, and where the marketing is furthest from the engineering. It is a while loop with an approval gate — the hard parts are the tools, the evaluation and the failure isolation, not the magic.
+
+- [LLM fundamentals](https://laxman824.github.io/learn/llms): Understand the thing everything else sits on. ~6h. If you only ever do one item on this page, do the first one. Almost every confused conversation I have about AI systems traces back to someone never having watched this.
+- [Agents & tools](https://laxman824.github.io/learn/agents): A model, in a loop, with tools. That's it. ~8h. This is the track I care most about, because it is the one where the industry's marketing is furthest from the engineering. An agent is not a mysterious autonomous intelligence. It is a while loop…
+- [Evals, tracing & observability](https://laxman824.github.io/learn/evals): The stage everyone skips. ~5h. This is the one that separates a demo from a product. As a system gets complicated, evals and tracing stop being nice-to-have and become the only way you can change anything without breaking it. If…
+- [Production architecture](https://laxman824.github.io/learn/production): Where AI engineering becomes engineering. ~6h. The gap between a working prototype and a system real users depend on is not model quality. It is latency, failure isolation, cost, caching and observability — ordinary distributed-systems work…
+
 ## Pages
 
 - [Home](https://laxman824.github.io/): overview, skills and a built-in AI assistant
 - [Projects](https://laxman824.github.io/projects): all 27 projects with full case studies
 - [Experience](https://laxman824.github.io/experience): Senior AI Engineer at Think360 AI (CAMS), Software Developer at CAMS Mutual Funds, Software Engineer at RAVI, IIT Delhi
 - [Education](https://laxman824.github.io/education): IIT Delhi — M.Tech & B.Tech, Computer Science & Engineering
+- [Learn](https://laxman824.github.io/learn): a working AI engineer's roadmap — LLM fundamentals, RAG, agent loops, tools/MCP, evals, production architecture
 - [GitHub Activity](https://laxman824.github.io/github): live open-source contribution stats
 - [Contact](https://laxman824.github.io/contact): hiring, consulting and collaboration
 
