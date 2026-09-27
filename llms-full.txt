@@ -8,7 +8,7 @@ Source: https://laxman824.github.io/projects · Concise index: https://laxman824
 
 ## CAMS Lens — SEBI-Grounded Compliance Intelligence Platform
 
-- URL: https://laxman824.github.io/projects/cams-lens
+- URL: https://laxman824.github.io/projects/cams-lens/
 - Live/source: https://camslens.camsai.com/
 - Role: AI Architect & Lead Engineer (Solo Developer)
 - Timeline: June 2024 - Present
@@ -78,7 +78,7 @@ Deployed a SEBI-grounded Retrieval-Augmented Generation (RAG) system enabling co
 
 ## CAMSCode — Enterprise AI Coding Assistant
 
-- URL: https://laxman824.github.io/projects/camscode
+- URL: https://laxman824.github.io/projects/camscode/
 - Live/source: https://drive.google.com/file/d/1PTXG45x_DptJQvzL3Nozgnn_fGjLXl71/view?usp=drivesdk
 - Interactive demo: https://laxman824.github.io/jarvis — CAMSCode can't leave the CAMS network. Jarvis is the same agent architecture, open source and running live — ask it about its own code.
 - Role: AI Engineer & Solo Developer
@@ -141,7 +141,7 @@ Built CAMSCode, a fully internal AI coding assistant that orchestrates Gemini 2.
 
 ## Intelligent Document Processing (IDP) - Multi-Agent System
 
-- URL: https://laxman824.github.io/projects/intelligent-document-processing
+- URL: https://laxman824.github.io/projects/intelligent-document-processing/
 - Live/source: https://github.com/Laxman824/
 - Role: AI Engineer
 - Timeline: Jan 2025 - Present
@@ -194,7 +194,7 @@ Engineered a Multi-Agent Orchestration Framework using LangGraph to handle the f
 
 ## OpsPilot — Agentic Request Triage & Remediation System
 
-- URL: https://laxman824.github.io/projects/opspilot
+- URL: https://laxman824.github.io/projects/opspilot/
 - Live/source: https://opspilot-autonomous-agent.streamlit.app/
 - Role: AI Engineer & Solo Developer
 - Timeline: 2026
@@ -254,7 +254,7 @@ Built a custom, framework-free ~140-line agent loop (no LangChain/AutoGPT) with 
 
 ## Agentic Research & Decision Intelligence Assistant
 
-- URL: https://laxman824.github.io/projects/research-intelligence-agent
+- URL: https://laxman824.github.io/projects/research-intelligence-agent/
 - Live/source: https://researchagent-langchain-reasoning.streamlit.app/
 - Role: AI Engineer & Solo Developer
 - Timeline: 2026
@@ -314,7 +314,7 @@ Built a stateful multi-step agent system using LangGraph with 100% deterministic
 
 ## NexGenGaming - E-Commerce Platform
 
-- URL: https://laxman824.github.io/projects/nexgengaming-ecommerce
+- URL: https://laxman824.github.io/projects/nexgengaming-ecommerce/
 - Live/source: https://gaming-ecommerce-fronted.vercel.app/
 - Role: Full Stack Developer
 - Timeline: March 2024 - May 2024
@@ -367,7 +367,7 @@ Built a modern, responsive e-commerce platform specifically for gaming products.
 
 ## RoomFlow - AI Booking System
 
-- URL: https://laxman824.github.io/projects/roomflow-ai-booking
+- URL: https://laxman824.github.io/projects/roomflow-ai-booking/
 - Live/source: https://workspace-booking-system.vercel.app/
 - Role: Full Stack Developer
 - Timeline: April 2024 - June 2024
@@ -420,7 +420,7 @@ Built an intelligent booking platform with AI-powered natural language booking (
 
 ## SEBI Debarred Entities Extraction — Regulatory Document Intelligence
 
-- URL: https://laxman824.github.io/projects/sebi-debarred-pan-extraction
+- URL: https://laxman824.github.io/projects/sebi-debarred-pan-extraction/
 - Live/source: https://github.com/Laxman824/
 - Role: Backend Developer & AI Engineer
 - Timeline: August 2024 - October 2024
@@ -478,7 +478,7 @@ Built an event-driven RAG pipeline on GCP (Pub/Sub, Cloud Run, GKE, Firestore) t
 
 ## AI-Powered Email Automation
 
-- URL: https://laxman824.github.io/projects/ai-email-automation
+- URL: https://laxman824.github.io/projects/ai-email-automation/
 - Live/source: https://github.com/Laxman824/
 - Role: ML Engineer
 - Timeline: July 2024 - September 2024
@@ -531,7 +531,7 @@ Built an AI microservice using LLMs for zero-shot email classification and named
 
 ## IPO Monitoring System
 
-- URL: https://laxman824.github.io/projects/ipo-monitoring-system
+- URL: https://laxman824.github.io/projects/ipo-monitoring-system/
 - Live/source: https://ipo-monitor-gmp.streamlit.app/Dashboard
 - Role: Full Stack Developer
 - Timeline: January 2024 - February 2024
@@ -584,7 +584,7 @@ Built a real-time dashboard that scrapes GMP data from multiple sources, tracks 
 
 ## Autonomous Multi-Agent Banking
 
-- URL: https://laxman824.github.io/projects/autonomous-multi-agent-banking
+- URL: https://laxman824.github.io/projects/autonomous-multi-agent-banking/
 - Live/source: https://github.com/laxman824
 - Role: AI Engineer
 - Timeline: October 2024 - December 2024
@@ -637,7 +637,7 @@ Built an autonomous multi-agent system where specialized AI agents (Receptionist
 
 ## Dialogflow CX Virtual Agent — Financial Services Chatbot & Voicebot (GCP / CCAI)
 
-- URL: https://laxman824.github.io/projects/dialogflow-cx-virtual-agent
+- URL: https://laxman824.github.io/projects/dialogflow-cx-virtual-agent/
 - Live/source: https://cloud.google.com/dialogflow/cx/docs
 - Role: AI Engineer
 - Timeline: 2025
@@ -696,7 +696,7 @@ Designed the complete Dialogflow CX conversation graph — intents → entity ty
 
 ## RSS Document Downloader
 
-- URL: https://laxman824.github.io/projects/rss-document-downloader
+- URL: https://laxman824.github.io/projects/rss-document-downloader/
 - Live/source: https://rss-feed-reader-and-pdf-downloader.streamlit.app/
 - Role: Developer
 - Timeline: February 2024
@@ -749,7 +749,7 @@ Built an automated tool that monitors multiple RSS feeds, detects new documents,
 
 ## MSG to PDF Converter
 
-- URL: https://laxman824.github.io/projects/msg-to-pdf-converter
+- URL: https://laxman824.github.io/projects/msg-to-pdf-converter/
 - Live/source: https://msg-to-pdf-converter-cams.streamlit.app/
 - Role: Developer
 - Timeline: March 2024
@@ -802,7 +802,7 @@ Built a batch conversion tool that extracts MSG file contents (headers, body, at
 
 ## PDF Footnotes Processor
 
-- URL: https://laxman824.github.io/projects/pdf-footnotes-processor
+- URL: https://laxman824.github.io/projects/pdf-footnotes-processor/
 - Live/source: https://pdf-proceappr-app-jxybczrguea2egjbmrk6yh.streamlit.app/
 - Role: Developer
 - Timeline: December 2023
@@ -855,7 +855,7 @@ Built a tool that uses OCR and layout analysis to detect footnote regions, extra
 
 ## OCR Field Extraction
 
-- URL: https://laxman824.github.io/projects/ocr-field-extraction
+- URL: https://laxman824.github.io/projects/ocr-field-extraction/
 - Live/source: https://field-ocr-extraction-advanced.streamlit.app/
 - Role: Developer
 - Timeline: November 2023
@@ -908,7 +908,7 @@ Built a specialized OCR pipeline using DocTR for text detection and custom regex
 
 ## Stock Exchange Platform
 
-- URL: https://laxman824.github.io/projects/stock-exchange-platform
+- URL: https://laxman824.github.io/projects/stock-exchange-platform/
 - Live/source: https://github.com/Laxman824/CAMS-StockEx
 - Role: Full Stack Developer
 - Timeline: September 2023 - November 2023
@@ -961,7 +961,7 @@ Built a complete stock exchange simulation with order book management, limit/mar
 
 ## Driver Drowsiness Detection
 
-- URL: https://laxman824.github.io/projects/driver-drowsiness-detection
+- URL: https://laxman824.github.io/projects/driver-drowsiness-detection/
 - Live/source: https://github.com/Laxman824/Projects-Assignments/tree/main/Realtime%20driver%20drowsiness%20detection
 - Role: Developer
 - Timeline: August 2022 - November 2022
@@ -1013,7 +1013,7 @@ Built an embedded system using Raspberry Pi and camera that detects eye closure 
 
 ## RAVI - Visual Assistant
 
-- URL: https://laxman824.github.io/projects/ravi-visual-assistant
+- URL: https://laxman824.github.io/projects/ravi-visual-assistant/
 - Live/source: https://github.com/Laxman824/RAVI-2022-2023-
 - Role: Software Engineer
 - Timeline: August 2022 - May 2024
@@ -1066,7 +1066,7 @@ Built RAVI (Reading Assistant for Visually Impaired) - an AI system that automat
 
 ## Table Recognition System
 
-- URL: https://laxman824.github.io/projects/table-recognition-system
+- URL: https://laxman824.github.io/projects/table-recognition-system/
 - Live/source: https://github.com/Laxman824/MTP2-work
 - Role: Researcher
 - Timeline: January 2023 - May 2024 (M.Tech Thesis)
@@ -1119,7 +1119,7 @@ Developed a deep learning model (MTL-TabNet architecture) that detects table reg
 
 ## RAVI - Accessible STEM Education
 
-- URL: https://laxman824.github.io/projects/ravi-accessible-stem-education
+- URL: https://laxman824.github.io/projects/ravi-accessible-stem-education/
 - Live/source: https://github.com/Laxman824/RAVI-2022-2023-
 - Role: Lead Developer
 - Timeline: August 2022 - May 2024
@@ -1172,7 +1172,7 @@ Extended RAVI with STEM-specific capabilities: chemical structure recognition, g
 
 ## SkyLine Airlines - DBMS System
 
-- URL: https://laxman824.github.io/projects/skyline-airlines-dbms
+- URL: https://laxman824.github.io/projects/skyline-airlines-dbms/
 - Live/source: https://github.com/Laxman824/Dbms-Project
 - Role: Developer
 - Timeline: September 2021 - December 2021
@@ -1225,7 +1225,7 @@ Built a complete airline reservation system showcasing: flight search with multi
 
 ## BitTorrent File Transfer
 
-- URL: https://laxman824.github.io/projects/bittorrent-file-transfer
+- URL: https://laxman824.github.io/projects/bittorrent-file-transfer/
 - Live/source: https://github.com/Laxman824/Projects-Assignments/tree/main/BitTorrent-technique
 - Role: Developer
 - Timeline: March 2021
@@ -1278,7 +1278,7 @@ Implemented core BitTorrent concepts: torrent file parsing, tracker communicatio
 
 ## AmudalaKunta - Payment Gateway
 
-- URL: https://laxman824.github.io/projects/amudalakunta-payment-gateway
+- URL: https://laxman824.github.io/projects/amudalakunta-payment-gateway/
 - Live/source: https://laxman824.github.io/AmudalaKunta/
 - Role: Developer & Initiator
 - Timeline: December 2020
@@ -1331,7 +1331,7 @@ Built a website for the village with Razorpay payment integration, contribution 
 
 ## AI Pacman - Multi-Agent Search
 
-- URL: https://laxman824.github.io/projects/ai-pacman-multi-agent-search
+- URL: https://laxman824.github.io/projects/ai-pacman-multi-agent-search/
 - Live/source: https://github.com/Laxman824/Projects-Assignments/tree/main/AI-Pacman%20heuristics
 - Role: Developer
 - Timeline: October 2020
@@ -1383,7 +1383,7 @@ Implemented complete suite: uninformed search (DFS, BFS), informed search (A*, G
 
 ## VM Snapshot System
 
-- URL: https://laxman824.github.io/projects/vm-snapshot-system
+- URL: https://laxman824.github.io/projects/vm-snapshot-system/
 - Live/source: https://github.com/Laxman824/LiveSnapshotProject
 - Role: Backend & Systems Developer
 - Timeline: April 2023
@@ -1436,7 +1436,7 @@ Implemented a Rust-based snapshot service that talks to KVM/libvirt to create an
 
 ## Smart Lift Controller System
 
-- URL: https://laxman824.github.io/projects/smart-lift-controller
+- URL: https://laxman824.github.io/projects/smart-lift-controller/
 - Live/source: https://github.com/Laxman824/COL215-COMP-ARCH-assignments
 - Role: Developer
 - Timeline: November 2020
