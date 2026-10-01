@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkLaxman_portfolio=self.webpackChunkLaxman_portfolio||[]).push([[6331],{56331:(e,n,t)=>{t.r(n),t.d(n,{default:()=>r});var i=t(65043),o=t(70579);const c="/opennotch/";function r(){return(0,i.useEffect)(()=>{window.location.replace(c)},[]),(0,o.jsx)("div",{style:{minHeight:"60vh",display:"grid",placeItems:"center",color:"inherit"},children:(0,o.jsx)("a",{href:c,children:"Opening OpenNotch\u2026"})})}}}]);
+//# sourceMappingURL=6331.a7cb3b59.chunk.js.map
