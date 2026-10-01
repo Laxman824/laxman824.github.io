@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b3671b37.css",
-    "main.js": "/static/js/main.97590f2a.js",
+    "main.js": "/static/js/main.adea4649.js",
     "static/css/9111.cf49af4e.chunk.css": "/static/css/9111.cf49af4e.chunk.css",
     "static/js/9111.b138abcf.chunk.js": "/static/js/9111.b138abcf.chunk.js",
     "static/css/8018.725d99a7.chunk.css": "/static/css/8018.725d99a7.chunk.css",
@@ -10,8 +10,8 @@
     "static/js/984.d65c1cc6.chunk.js": "/static/js/984.d65c1cc6.chunk.js",
     "static/css/9850.0aa5c18c.chunk.css": "/static/css/9850.0aa5c18c.chunk.css",
     "static/js/9850.293e23b1.chunk.js": "/static/js/9850.293e23b1.chunk.js",
-    "static/css/8045.a5e74724.chunk.css": "/static/css/8045.a5e74724.chunk.css",
-    "static/js/8045.168e6bd4.chunk.js": "/static/js/8045.168e6bd4.chunk.js",
+    "static/css/5398.0b6fa2f8.chunk.css": "/static/css/5398.0b6fa2f8.chunk.css",
+    "static/js/5398.d8ac2f2d.chunk.js": "/static/js/5398.d8ac2f2d.chunk.js",
     "static/css/896.1982f64b.chunk.css": "/static/css/896.1982f64b.chunk.css",
     "static/js/896.fdc356be.chunk.js": "/static/js/896.fdc356be.chunk.js",
     "static/css/6196.b8b9b9d0.chunk.css": "/static/css/6196.b8b9b9d0.chunk.css",
@@ -223,6 +223,7 @@
     "static/media/video_game_3d.png": "/static/media/video_game_3d.46e71163d499acc83176.png",
     "static/media/memo_3d.png": "/static/media/memo_3d.6806a8d7c13b9a0ab2e8.png",
     "static/media/100.png": "/static/media/100.528a5c8b588ab5846e72.png",
+    "static/media/laptop_3d.png": "/static/media/laptop_3d.ab7f755c19a11c899e12.png",
     "static/media/walmart_cert-sm.webp": "/static/media/walmart_cert-sm.69cf2dd37efdf3721c55.webp",
     "static/media/ibm3.png": "/static/media/ibm3.9fa103d720de27987534.png",
     "static/media/mobile_phone_3d.png": "/static/media/mobile_phone_3d.cc485fa69d533083d894.png",
@@ -265,7 +266,7 @@
     "static/media/TheAppBrewery-Code-sm.webp": "/static/media/TheAppBrewery-Code-sm.aebd4b62a81f6d8e58cf.webp",
     "static/media/ibm3-sm.webp": "/static/media/ibm3-sm.853b01f9c71a1998423f.webp",
     "main.b3671b37.css.map": "/static/css/main.b3671b37.css.map",
-    "main.97590f2a.js.map": "/static/js/main.97590f2a.js.map",
+    "main.adea4649.js.map": "/static/js/main.adea4649.js.map",
     "9111.cf49af4e.chunk.css.map": "/static/css/9111.cf49af4e.chunk.css.map",
     "9111.b138abcf.chunk.js.map": "/static/js/9111.b138abcf.chunk.js.map",
     "8018.725d99a7.chunk.css.map": "/static/css/8018.725d99a7.chunk.css.map",
@@ -274,8 +275,8 @@
     "984.d65c1cc6.chunk.js.map": "/static/js/984.d65c1cc6.chunk.js.map",
     "9850.0aa5c18c.chunk.css.map": "/static/css/9850.0aa5c18c.chunk.css.map",
     "9850.293e23b1.chunk.js.map": "/static/js/9850.293e23b1.chunk.js.map",
-    "8045.a5e74724.chunk.css.map": "/static/css/8045.a5e74724.chunk.css.map",
-    "8045.168e6bd4.chunk.js.map": "/static/js/8045.168e6bd4.chunk.js.map",
+    "5398.0b6fa2f8.chunk.css.map": "/static/css/5398.0b6fa2f8.chunk.css.map",
+    "5398.d8ac2f2d.chunk.js.map": "/static/js/5398.d8ac2f2d.chunk.js.map",
     "896.1982f64b.chunk.css.map": "/static/css/896.1982f64b.chunk.css.map",
     "896.fdc356be.chunk.js.map": "/static/js/896.fdc356be.chunk.js.map",
     "6196.b8b9b9d0.chunk.css.map": "/static/css/6196.b8b9b9d0.chunk.css.map",
@@ -370,6 +371,6 @@
   },
   "entrypoints": [
     "static/css/main.b3671b37.css",
-    "static/js/main.97590f2a.js"
+    "static/js/main.adea4649.js"
   ]
 }

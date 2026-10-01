@@ -1,4 +1,4 @@
-# K Laxman — all 27 projects in full
+# K Laxman — all 28 projects in full
 
 > Senior AI Engineer at Think360 AI (CAMS) and IIT Delhi graduate (M.Tech & B.Tech, Computer Science). Builds production Generative AI systems end to end: LLM-powered applications, Retrieval-Augmented Generation (RAG) pipelines, multi-agent orchestration, and full-stack products with React, Python and cloud infrastructure.
 
@@ -189,6 +189,63 @@ Engineered a Multi-Agent Orchestration Framework using LangGraph to handle the f
 - Implementing 'Reflection' patterns to reduce AI hallucinations
 - Balancing cost vs. accuracy with Gemini Flash models
 - Enforcing strict JSON schemas using Pydantic in production
+
+---
+
+## OpenNotch — Open-Source AI Assistant in the MacBook Notch
+
+- URL: https://laxman824.github.io/projects/opennotch/
+- Live/source: https://laxman824.github.io/opennotch/
+- Role: Creator & Maintainer
+- Timeline: 2026 - Present
+- Team: Solo Developer · Open Source
+- Technologies: Swift, SwiftUI, LLM Agents, MCP, Three.js, Open Source (MIT)
+
+An open-source (MIT) macOS app that turns the MacBook notch into an AI assistant that actually does things: 40+ agent tools, 14 notch modules, hands-free voice, MCP connectors and an approval gate for anything risky. Native Swift with an in-process agent loop — no server, no account, no telemetry; chats, memory and keys stay on the Mac. Comes with Puff, a pokeable notch character, and a live three.js desktop companion.
+
+### Problem
+
+The MacBook notch is dead screen space, and desktop AI assistants are either chat windows that can't act, or agents that act without asking — usually behind an account and a cloud backend that sees everything.
+
+### Solution
+
+OpenNotch puts a native Swift agent in the notch. One hover or ⌥Space opens it; it plans, calls tools (files, shell, web, Mail drafts, Notes, calendar, reminders, contacts, weather, schedules) and any MCP server, streams its thinking and plan live, and pauses for approval before anything risky. It works with OpenAI, Anthropic, Gemini, Groq, OpenRouter, Ollama, LM Studio or Apple's on-device model, and keeps everything local.
+
+### Impact
+
+- Open-source (MIT) — 40+ agent tools, 14 notch modules, any AI provider
+- Zero backend: in-process agent, no account, no telemetry; keys in the macOS Keychain
+- Every risky action (shell, file writes, calendar, mail drafts, MCP) gated behind an explicit OK
+- Live-tested multi-tool agent turns with approval and decline paths; 80+ automated agent checks
+
+### Key features
+
+- Agent loop with streaming thinking, plan cards, expandable tool calls and chat history (⌘Y)
+- Approvals: glowing notch + chime when closed, spoken yes/no in hands-free mode, 5-minute timeout = deny
+- MCP client (stdio) using the common mcpServers config, with per-tool autoApprove
+- Hands-free voice with on-device speech recognition, barge-in and voice approvals
+- Notch modules: clipboard history, drag-and-drop shelf, calendar & reminders, music, timers, captures and more
+- Scheduled prompts ("every weekday at 9, brief me") and an opennotch CLI for piping text in
+- Puff, a jelly-blob notch character with poke/pet reactions, and a three.js desktop companion (Ledge, Bee or Cat)
+
+### Tech stack
+
+- app: Swift, SwiftUI, AppKit, AVFoundation, EventKit, Contacts
+- ai: OpenAI-compatible APIs, Anthropic Messages API, Apple FoundationModels, Model Context Protocol
+- companion: three.js, WKWebView
+- tooling: Swift Package Manager, GitHub Actions, DMG packaging
+
+### Architecture highlights
+
+- Provider abstraction streams a common event vocabulary (text, thinking, tool calls, usage) across OpenAI-compatible, Anthropic and on-device models
+- Tool results are budgeted (40k chars, overflow spilled to a file) and repeated identical calls are bounced
+- Audio and TCC-protected work never runs on the main thread; every permission prompt yields the notch first
+
+### Learnings
+
+- A tool router (core set + keyword groups + more_tools) cuts thousands of prompt tokens per request and helps small models choose tools
+- Approvals must register their waiter before they're announced — an answer can arrive synchronously
+- UI performance on macOS is mostly about what you don't animate: no per-frame blurs or animated gradients over large areas
 
 ---
 

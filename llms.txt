@@ -8,11 +8,12 @@
 - Email: laxmankethavath5@gmail.com
 - Every project in full detail, in one file: https://laxman824.github.io/llms-full.txt
 
-## Projects (27)
+## Projects (28)
 
 - [CAMS Lens — SEBI-Grounded Compliance Intelligence Platform](https://laxman824.github.io/projects/cams-lens/): Productionized an enterprise-grade GenAI compliance platform leveraging RAG over 80,000+ SEBI and financial regulatory documents. Achieved 95% retrieval precision with sub-7-second response latency, delivering audit-ready, citation-backed… Tech: RAG, Google Cloud, Vertex AI, Cloud Run, AlloyDB, BigQuery, Python, AI/ML.
 - [CAMSCode — Enterprise AI Coding Assistant](https://laxman824.github.io/projects/camscode/): Built an internal, secure, private alternative to GitHub Copilot deployed entirely within CAMS infrastructure. Autonomously converts PRDs and HLDs into production-ready full-stack applications using 80+ custom tools and MCP servers —… Tech: AI/ML, Agentic AI, MCP Servers, Ollama, RAG, Google Cloud, Vertex AI, Cloud Run.
 - [Intelligent Document Processing (IDP) - Multi-Agent System](https://laxman824.github.io/projects/intelligent-document-processing/): Enterprise-level Multi-Agent Orchestration Framework using LangGraph and Gemini 2.5 Flash to automate data extraction from complex Mutual Fund forms. Features self-correcting agents and confidence-based automation. Tech: LangGraph, Gemini 2.5, Vertex AI, Python, Pydantic, Docker.
+- [OpenNotch — Open-Source AI Assistant in the MacBook Notch](https://laxman824.github.io/projects/opennotch/): An open-source (MIT) macOS app that turns the MacBook notch into an AI assistant that actually does things: 40+ agent tools, 14 notch modules, hands-free voice, MCP connectors and an approval gate for anything risky. Native Swift with an… Tech: Swift, SwiftUI, LLM Agents, MCP, Three.js, Open Source (MIT).
 - [OpsPilot — Agentic Request Triage & Remediation System](https://laxman824.github.io/projects/opspilot/): Developed an end-to-end Agentic AI platform that automates customer support operations by understanding incoming emails, planning intelligent remediation workflows, validating decisions through policy guardrails, and providing transparent… Tech: Gemini 2.5, Python, Streamlit, SQLite, Pandas, Altair.
 - [Agentic Research & Decision Intelligence Assistant](https://laxman824.github.io/projects/research-intelligence-agent/): Developed a LangGraph-powered multi-step research and decision-support system that decomposes complex queries into research dimensions, gathers external evidence with deterministic fallback and circuit breaking, validates findings, and… Tech: LangGraph, Gemini 2.5, Python, Streamlit, FastAPI, SQLite.
 - [NexGenGaming - E-Commerce Platform](https://laxman824.github.io/projects/nexgengaming-ecommerce/): Full-stack gaming e-commerce with real-time inventory, order tracking, and payment integration. Tech: React, Node.js, MongoDB, Express, Firebase, TailwindCSS, Vercel.
@@ -74,7 +75,7 @@ Where I spend my own time, and where the marketing is furthest from the engineer
 ## Pages
 
 - [Home](https://laxman824.github.io/): overview, skills and a built-in AI assistant
-- [Projects](https://laxman824.github.io/projects): all 27 projects with full case studies
+- [Projects](https://laxman824.github.io/projects): all 28 projects with full case studies
 - [Experience](https://laxman824.github.io/experience): Senior AI Engineer at Think360 AI (CAMS), Software Developer at CAMS Mutual Funds, Software Engineer at RAVI, IIT Delhi
 - [Education](https://laxman824.github.io/education): IIT Delhi — M.Tech & B.Tech, Computer Science & Engineering
 - [Learn](https://laxman824.github.io/learn): a working AI engineer's roadmap — LLM fundamentals, RAG, agent loops, tools/MCP, evals, production architecture
