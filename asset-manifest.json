@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b3671b37.css",
-    "main.js": "/static/js/main.adea4649.js",
+    "main.js": "/static/js/main.9e835359.js",
     "static/css/9111.cf49af4e.chunk.css": "/static/css/9111.cf49af4e.chunk.css",
     "static/js/9111.b138abcf.chunk.js": "/static/js/9111.b138abcf.chunk.js",
     "static/css/8018.725d99a7.chunk.css": "/static/css/8018.725d99a7.chunk.css",
@@ -266,7 +266,7 @@
     "static/media/TheAppBrewery-Code-sm.webp": "/static/media/TheAppBrewery-Code-sm.aebd4b62a81f6d8e58cf.webp",
     "static/media/ibm3-sm.webp": "/static/media/ibm3-sm.853b01f9c71a1998423f.webp",
     "main.b3671b37.css.map": "/static/css/main.b3671b37.css.map",
-    "main.adea4649.js.map": "/static/js/main.adea4649.js.map",
+    "main.9e835359.js.map": "/static/js/main.9e835359.js.map",
     "9111.cf49af4e.chunk.css.map": "/static/css/9111.cf49af4e.chunk.css.map",
     "9111.b138abcf.chunk.js.map": "/static/js/9111.b138abcf.chunk.js.map",
     "8018.725d99a7.chunk.css.map": "/static/css/8018.725d99a7.chunk.css.map",
@@ -371,6 +371,6 @@
   },
   "entrypoints": [
     "static/css/main.b3671b37.css",
-    "static/js/main.adea4649.js"
+    "static/js/main.9e835359.js"
   ]
 }
