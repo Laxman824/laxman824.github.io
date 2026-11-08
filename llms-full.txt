@@ -1,6 +1,6 @@
 # K Laxman — all 28 projects in full
 
-> Senior Software Engineer (Agentic AI) at CGI and IIT Delhi graduate (M.Tech & B.Tech, Computer Science). Builds production Generative AI systems end to end: LLM-powered applications, Retrieval-Augmented Generation (RAG) pipelines, multi-agent orchestration, and full-stack products with React, Python and cloud infrastructure.
+> Senior Software Engineer, Agentic AI at CGI and IIT Delhi graduate (M.Tech & B.Tech, Computer Science). Builds production Generative AI systems end to end: LLM-powered applications, Retrieval-Augmented Generation (RAG) pipelines, multi-agent orchestration, and full-stack products with React, Python and cloud infrastructure.
 
 Source: https://laxman824.github.io/projects · Concise index: https://laxman824.github.io/llms.txt
 

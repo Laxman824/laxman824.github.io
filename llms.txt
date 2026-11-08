@@ -1,6 +1,6 @@
 # K Laxman — AI/ML Engineer & Full Stack Developer
 
-> Senior Software Engineer (Agentic AI) at CGI and IIT Delhi graduate (M.Tech & B.Tech, Computer Science). Builds production Generative AI systems end to end: LLM-powered applications, Retrieval-Augmented Generation (RAG) pipelines, multi-agent orchestration, and full-stack products with React, Python and cloud infrastructure.
+> Senior Software Engineer, Agentic AI at CGI and IIT Delhi graduate (M.Tech & B.Tech, Computer Science). Builds production Generative AI systems end to end: LLM-powered applications, Retrieval-Augmented Generation (RAG) pipelines, multi-agent orchestration, and full-stack products with React, Python and cloud infrastructure.
 
 - Website: https://laxman824.github.io/
 - GitHub: https://github.com/Laxman824
@@ -76,7 +76,7 @@ Where I spend my own time, and where the marketing is furthest from the engineer
 
 - [Home](https://laxman824.github.io/): overview, skills and a built-in AI assistant
 - [Projects](https://laxman824.github.io/projects): all 28 projects with full case studies
-- [Experience](https://laxman824.github.io/experience): Senior Software Engineer – Agentic AI at CGI, Senior AI Engineer at Think360 AI (CAMS), Software Developer at CAMS Mutual Funds, Software Engineer at RAVI, IIT Delhi
+- [Experience](https://laxman824.github.io/experience): Senior Software Engineer – Agentic AI at CGI, Senior AI Engineer at Think360 AI - CAMS, AI Engineer at CAMS Mutual Funds, AI/ML Researcher at RAVI - IIT Delhi
 - [Education](https://laxman824.github.io/education): IIT Delhi — M.Tech & B.Tech, Computer Science & Engineering
 - [Learn](https://laxman824.github.io/learn): a working AI engineer's roadmap — LLM fundamentals, RAG, agent loops, tools/MCP, evals, production architecture
 - [GitHub Activity](https://laxman824.github.io/github): live open-source contribution stats
