@@ -1,4 +1,4 @@
-# K Laxman — all 28 projects in full
+# K Laxman — all 29 projects in full
 
 > Senior Software Engineer, Agentic AI at CGI and IIT Delhi graduate (M.Tech & B.Tech, Computer Science). Builds production Generative AI systems end to end: LLM-powered applications, Retrieval-Augmented Generation (RAG) pipelines, multi-agent orchestration, and full-stack products with React, Python and cloud infrastructure.
 
@@ -246,6 +246,58 @@ OpenNotch puts a native Swift agent in the notch. One hover or ⌥Space opens it
 - A tool router (core set + keyword groups + more_tools) cuts thousands of prompt tokens per request and helps small models choose tools
 - Approvals must register their waiter before they're announced — an answer can arrive synchronously
 - UI performance on macOS is mostly about what you don't animate: no per-frame blurs or animated gradients over large areas
+
+---
+
+## Job Copilot — Find, Evaluate & Track Job Applications with AI
+
+- URL: https://laxman824.github.io/projects/job-copilot/
+- Live/source: https://laxman824.github.io/jobhunt
+- Interactive demo: https://laxman824.github.io/jobhunt — Free, no sign-up. Upload your CV or use the sample profile, then search, evaluate and track real jobs.
+- Role: Full Stack & AI Engineer
+- Timeline: 2026 - Present
+- Team: Solo Project
+- Technologies: React, Firebase, Gemini, LLM Agents, Node.js
+
+A free, no-sign-up job search copilot that runs live on this site. Upload a CV and it becomes a skills profile; search real listings in 11 countries ranked against it; paste any job description for an instant ATS keyword scan and an honest AI verdict (1–5 fit score, cited evidence, red flags, posting-legitimacy check, CV edits and STAR interview stories); then track every application on a drag-and-drop board and draft recruiter emails. A visitor's data never leaves their browser.
+
+### Problem
+
+Job seekers spray applications because judging fit is slow: reading every JD against your CV, guessing which keywords an ATS filters on, and keeping track of who you emailed. The popular tools split this across paid tiers: keyword scans are capped (Jobscan's free plan allows 5 a month), trackers upsell AI, and most want an account and your data.
+
+### Solution
+
+One workspace covering the whole loop. The CV is parsed in the browser (pdf.js) into a structured profile by an LLM. Live search goes through a Firebase Function proxy to Adzuna (keys stay server-side), with Remotive for remote roles, and results are ranked instantly by a local skill-alias matcher before optional AI re-scoring. The evaluator pairs a deterministic, Jobscan-style keyword scan (curated lexicon, plural and alias aware, requirement lines weighted) with an AI judgement modeled on career-ops: five scored dimensions, a 4.0 apply line, requirement-by-requirement evidence quoted from the CV, posting legitimacy kept separate from the score, and a hard rule against inventing experience.
+
+### Impact
+
+- Live and public: anyone can use it without an account
+- Unlimited ATS keyword scans, computed locally in milliseconds
+- Visitor data isolated in the browser; nothing is synced, tracked or sent on their behalf
+- Runs on the site's shared LLM chain (Gemini → Groq → NVIDIA) behind per-visitor rate limits and a 7-day response cache
+
+### Key features
+
+- CV upload (PDF), paste-in, or a sample profile to explore
+- Live job search in 11 countries plus remote-only, ranked against your profile
+- Should-I-apply evaluation: 1–5 score, dimension breakdown, cited evidence, red flags, legitimacy check
+- Level strategy, top CV changes and STAR interview stories per role
+- Drag-and-drop pipeline board (Saved → Drafted → Applied → Callback → Interviewing → Offer) and CSV export
+- AI-drafted recruiter emails mapped to the JD, with recruiter-search helpers
+- Owner mode: Firestore sync, tracked CV links, one-click Gmail send and a daily follow-up drafter
+
+### Tech stack
+
+- frontend: React, pdf.js, CSS custom properties
+- backend: Firebase Cloud Functions (Node 24), Firestore, Gmail API (owner only)
+- ai: Gemini 2.5 Flash, Groq gpt-oss-120b, NVIDIA Nemotron
+- data: Adzuna API, Remotive API
+
+### Learnings
+
+- Keyword matching is a UX feature, not just a score: showing which required terms are missing is what people act on
+- Thinking models spend output budget before the JSON, so structured calls need a generous token ceiling and one silent retry
+- A public demo of a personal tool needs a hard data boundary: separate storage scopes, and owner-only side effects
 
 ---
 
