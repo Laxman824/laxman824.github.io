@@ -3,65 +3,82 @@
 
 User-agent: *
 Allow: /
-
-# Private tools — keep out of search results
+# Owner-only dashboard — keep out of search results
 Disallow: /admin
-Disallow: /jobhunt
 
 # ----------------------------------------------------------------
-# AI / LLM crawlers — explicitly welcome. Every project has its own
-# prerendered page at /projects/<slug>, and llms.txt below is a
-# machine-readable index of the whole portfolio.
+# AI / LLM crawlers — explicitly welcome. Every project, blog post and
+# learning track has its own prerendered page, and llms.txt below is a
+# machine-readable index of the whole portfolio. A crawler that matches
+# its own group ignores the * group, so each group repeats the disallow.
 # ----------------------------------------------------------------
 User-agent: GPTBot
 Allow: /
 Disallow: /admin
-Disallow: /jobhunt
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /admin
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /admin
 
 User-agent: ClaudeBot
 Allow: /
 Disallow: /admin
-Disallow: /jobhunt
 
 User-agent: Claude-User
 Allow: /
+Disallow: /admin
 
 User-agent: Claude-SearchBot
 Allow: /
+Disallow: /admin
 
 User-agent: PerplexityBot
 Allow: /
 Disallow: /admin
-Disallow: /jobhunt
 
 User-agent: Perplexity-User
 Allow: /
+Disallow: /admin
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /admin
 
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /admin
 
 User-agent: CCBot
 Allow: /
 Disallow: /admin
-Disallow: /jobhunt
 
 User-agent: Bytespider
 Allow: /
+Disallow: /admin
 
 User-agent: Amazonbot
 Allow: /
+Disallow: /admin
 
 User-agent: meta-externalagent
 Allow: /
+Disallow: /admin
+
+User-agent: DuckAssistBot
+Allow: /
+Disallow: /admin
+
+User-agent: MistralAI-User
+Allow: /
+Disallow: /admin
+
+User-agent: cohere-ai
+Allow: /
+Disallow: /admin
 
 # Sitemap location (generated at build time by scripts/prerender.js)
 Sitemap: https://laxman824.github.io/sitemap.xml
